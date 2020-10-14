@@ -16,3 +16,6 @@ Kontaktinformasjonen er tilgjengelig for alle, så vi anbefaler brukeren å ikke
 
 ### Kilder:
 * https://www.howtographql.com/graphql-js/0-introduction/
+* [MongoDB Dokumentasjon](https://docs.mongodb.com/manual/)
+* [GrpahQl API for MongoDB](https://docs.mongodb.com/realm/graphql/)
+* [](url)
