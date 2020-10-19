@@ -1,13 +1,11 @@
-const fs = require('fs');
-// import faker from 'faker/locale/nb_NO';
-
 // This is a file that was run only once to create the JSON data for the database.
 // As such it is only included here for transparancy reasons and is not implemented
-// in any other part of the code. This is not a very pretty file, but again it does 
-// not need to be.
+// in any other part of the code. There is only one image of a cat included to reduce
+// bandwidth when cloning this repo. These were generated using this repo: https://github.com/theaklair/those-cats-do-not-exist
+// The code will probably still work but will only generate one entry.
 
-// To check out the result install and run ts-node create_dummy_data.ts
-
+// To check out the result install and run: ts-node create_dummy_data.ts
+const fs = require('fs');
 let faker = require('faker');
 faker.seed(42);
 faker.locale = 'nb_NO'
@@ -115,7 +113,7 @@ let dataObj = generateData(location_data);
 console.log(dataObj.data);
 let json_data = JSON.stringify(dataObj.data);
 
-fs.writeFile('src/database/user.json', json_data, (err:any) => {
+fs.writeFile('src/database/data.json', json_data, (err:any) => {
     if (err) {
         throw err;
     }
