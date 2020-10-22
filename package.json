@@ -47,4 +47,6 @@
     "ts-node": "^9.0.0",
     "typescript": "^3.7.5"
   }
+        "react-router-dom": "^5.2.0",
+        "typescript": "~3.7.2"
 }
