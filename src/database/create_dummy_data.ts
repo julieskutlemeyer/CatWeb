@@ -113,6 +113,7 @@ let dataObj = generateData(location_data);
 console.log(dataObj.data);
 let json_data = JSON.stringify(dataObj.data);
 
+console.log("Starting write to file...")
 fs.writeFile('src/database/data.json', json_data, (err:any) => {
     if (err) {
         throw err;
