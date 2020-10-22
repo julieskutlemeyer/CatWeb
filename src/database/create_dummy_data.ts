@@ -73,7 +73,6 @@ function generateData(csv_data:string) {
 
         // TODO: Maybe add description of the cat
         entry.push({
-            "id": id,
             "post": {
                 "date_published": utc_date_published, // integer UTC-date-time
                 "county_code": county_code, // string of county code, eg 3050
