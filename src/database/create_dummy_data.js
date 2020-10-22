@@ -1,18 +1,19 @@
 // This is a file that was run only once to create the JSON data for the database.
 // As such it is only included here for transparancy reasons and is not implemented
 // in any other part of the code. There is only one image of a cat included to reduce
-// bandwidth when cloning this repo. These were generated using this repo: https://github.com/theaklair/those-cats-do-not-exist
-// The code will probably still work but will only generate one entry.
+// bandwidth when cloning this repo. All images were generated using this repo: https://github.com/theaklair/those-cats-do-not-exist
 
-// To check out the result install and run: ts-node create_dummy_data.ts
+// This file breaks the code so is refactored to a .js file when not used. 
+// To check out the result rename it to .ts, install and run: ts-node src/database/create_dummy_data.ts
+
 const fs = require('fs');
 let faker = require('faker');
 faker.seed(42);
 faker.locale = 'nb_NO'
 
-function generateData(csv_data:string) {
+function generateData(csv_data) {
     let entry = []
-    let gend:boolean;
+    let gend;
 
 
     let cats_folder = fs.readdirSync('src/database/cat_pictures');
@@ -20,7 +21,7 @@ function generateData(csv_data:string) {
     // Ensures 50/50 split on genders of cats, and chooses how many entries to be made.
     // Currently limited to 100 as this is the amount of images currently created.
     for (let id = 0; id <= end-1; id++) {
-        if (id > 5) {
+        if (id > (end/2)) {
             gend = false;
         } else {
             gend = true;
@@ -51,7 +52,7 @@ function generateData(csv_data:string) {
         let phone = faker.phone.phoneNumberFormat(2).replace(/\s+/g, '');
 
         // Fake info of the cat:
-        let cat_gend:string;
+        let cat_gend;
         if (gend) {
             cat_gend = "male";
         } else {
@@ -110,10 +111,10 @@ let location_data = readFile()
 let dataObj = generateData(location_data);
 // console.log(JSON.stringify(dataObj));
 console.log(dataObj.data);
-let json_data = JSON.stringify(dataObj.data);
+let json_data = JSON.stringify(dataObj);
 
 console.log("Starting write to file...")
-fs.writeFile('src/database/data.json', json_data, (err:any) => {
+fs.writeFile('src/database/data.json', json_data, (err) => {
     if (err) {
         throw err;
     }
