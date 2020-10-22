@@ -1,6 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import SearchPage from "./components/SearchPage";
+
+import { PostsList } from './posts/PostsList'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom'
+
+//react.fragment gjør at hvis en komponent har 
+//fler elementer i seg, kan vi vise disse uten at det lages
+//ekstra noder til DOMen
 
 function App() {
   return (
@@ -10,6 +24,13 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+
+        <SearchPage />
+
+        <React.Fragment>
+                <PostsList />
+          </React.Fragment>
+
         <a
           className="App-link"
           href="https://reactjs.org"
