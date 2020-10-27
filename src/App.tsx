@@ -1,17 +1,8 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-const axios = require('axios').default;
 import SearchPage from "./components/SearchPage";
-
-import { PostsList } from './posts/PostsList'
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom'
+const axios = require('axios').default;
 
 //react.fragment gjør at hvis en komponent har 
 //fler elementer i seg, kan vi vise disse uten at det lages
@@ -23,16 +14,17 @@ function App() {
 
   axios.get('http://it2810-10.idi.ntnu.no:5000/api/cat').then((res: any) => {
     console.log(res);
-    setData(res.data[dat].name)
+    setData(res.data[dat].cat.cat_img_rel_adr)
   })
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <p onClick={() => setDat(dat+1)}>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <img src={data}/>
         {data}
 
         <SearchPage />
