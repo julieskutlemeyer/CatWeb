@@ -9,7 +9,7 @@ function App() {
 
   axios.get('http://it2810-10.idi.ntnu.no:5000/api/cat').then((res: any) => {
     console.log(res);
-    setData(res.data[dat].name)
+    setData(res.data[dat].cat.cat_name)
   })
 
   return (
