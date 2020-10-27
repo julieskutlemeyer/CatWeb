@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import SearchPage from "./components/SearchPage";
 const axios = require('axios').default;
+
+//react.fragment gjør at hvis en komponent har 
+//fler elementer i seg, kan vi vise disse uten at det lages
+//ekstra noder til DOMen
 
 function App() {
   const [data, setData] = useState("")
@@ -16,10 +21,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <p onClick={() => setDat(dat+1)}>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <img src={data}/>
         {data}
+
+        <SearchPage />
+
         <a
           className="App-link"
           href="https://reactjs.org"
