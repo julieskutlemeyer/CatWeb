@@ -10,9 +10,10 @@ router.get('/cat', async(req, res, next) => {
     search_name = new RegExp(name, 'i');
     filter_name = new RegExp(gender, 'i');
     console.log(filter_name);
+    catgender = gender == "" ? filter_name : gender
     try {
         // execute query with page and limit values
-        const posts = await Cat.find({"owner.first_name": search_name, "cat.cat_gender": filter_name})
+        const posts = await Cat.find({"owner.first_name": search_name, "cat.cat_gender": catgender})
 	    .sort(sortby) 
             .limit(limit * 1)
             .skip((page - 1) * limit)
