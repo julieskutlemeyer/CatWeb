@@ -24,7 +24,6 @@ function App() {
         <p onClick={() => setDat(dat+1)}>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <img src={data}/>
         {data}
 
         <SearchPage />
