@@ -7,7 +7,26 @@ const CatSchema = new Schema({
     name: String,
     age: Number,
     race: String,
-    description: String
+    description: String,
+    post: {
+        date_published: Date,
+        county_code: Number,
+        county_name: String,
+        street_name: String
+    },
+    owner: {
+        first_name: String,
+        last_name: String,
+        email: String,
+        phone: Number
+    },
+    cat: {
+        cat_name: String,
+        cat_gender: String,
+        cat_birthdate: Date,
+        cat_img_rel_adr: String
+    }
+
 })
 
 CatSchema.plugin(mongoosePaginate);
