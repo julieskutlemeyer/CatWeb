@@ -4,11 +4,16 @@ const Cat = require('../models/cat');
 
 router.get('/cat', async(req, res, next) => {
 
-    const { page = 1, limit = 10 } = req.query;
-
+    const { page = 1, limit = 10, sortby = "owner.first_name", name = "", gender="" } = req.query;
+    console.log(req.query);
+    console.log(sortby);
+    search_name = new RegExp(name, 'i');
+    filter_name = new RegExp(gender, 'i');
+    console.log(filter_name);
     try {
         // execute query with page and limit values
-        const posts = await Cat.find()
+        const posts = await Cat.find({"owner.first_name": search_name, "cat.cat_gender": filter_name})
+	    .sort(sortby) 
             .limit(limit * 1)
             .skip((page - 1) * limit)
             .exec();

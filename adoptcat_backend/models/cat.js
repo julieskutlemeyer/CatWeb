@@ -4,7 +4,7 @@ const mongoosePaginate = require('mongoose-paginate-v2');
 
 //create schema for cat
 const CatSchema = new Schema({
-    id: mongoose.ObjectID,
+    id: Schema.Types.ObjectID,
     post: {
         date_published: Date,
         county_code: Number,
