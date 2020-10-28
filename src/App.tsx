@@ -14,8 +14,9 @@ function App() {
   const [sortby, setSortby] = useState("owner.first_name")
   const [page, setPage] = useState("1")
   const [search, setSearch] = useState("")
+  const [gender, setGender] = useState("")
 
-  var query = "?sortby="+{sortby}+"&page="+{page}+"&name="+{search}
+  var query = "?sortby="+{sortby}+"&page="+{page}+"&name="+{search}+"&gender="+{gender}
 
   axios.get('http://it2810-10.idi.ntnu.no:5000/api/cat'+query).then((res: any) => {
     console.log(res);
