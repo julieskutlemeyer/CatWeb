@@ -1,38 +1,66 @@
+/* Color palette: */
+:root {
+    --lighten-5 :#e0f2f1;
+    --lighten-4:#b2dfdb;
+    --lighten-3:#80cbc4;
+    --lighten-2:#4db6ac; 
+    --lighten-1:#26a69a; 
+    --main:#009688; 
+    --darken-1:#00897b;
+    --darken-2:#00796b;
+    --darken-3:#00695c;
+    --darken-4:#004d40;
+    --accent-1:#a7ffeb;
+    --accent-2:#64ffda;
+    --accent-3:#1de9b6;
+    --accent-4:#00bfa5;
+}
+
+body {
+  background-color: var(--lighten-4);
+}
+
+.header {
+    background-color: var(--lighten-2);
+}
+
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Some fixing to get gaps between cols and rows */
+#post-rows > * > div {
+    background-color: var(--lighten-5);
+    padding: 1em;
+    margin: .5em;
+    text-align: center;
+    border-radius: .5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Some fixing to get gaps between cols and rows */
+#post-rows > * {
+    padding: 0;
+    margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Removes the deafult padding of <Containers> to let e.g. <Jumbotron>
+   cover the full witdh of the page */
+.fluid-container {
+    padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/* https://medium.com/fredwong-it/react-how-to-add-a-footer-da3abb3d7a41 */
+/* #footer{
+    background-color: var(--darken-1);
+    border-top: 1px solid #E7E7E7;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+} */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+

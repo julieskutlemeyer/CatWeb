@@ -11,26 +11,59 @@ import Col from 'react-bootstrap/Col';
 
 import Button from 'react-bootstrap/Button';
 
+import testcat from './database/cat_pictures/1602674119317.jpg'
+
 const App: React.FC = () => {
-  return (
-    <Container fluid className="top-level-container">
-      <Jumbotron>
-        <h1 className="header">
-          Welcom to Adopt-a-Cat :3
-        </h1>
-      </Jumbotron>
-      <Row>
-        <Col> Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum a dolorum ratione dicta veritatis molestiae. Suscipit incidunt exercitationem nemo iure fugiat, error tenetur quod, maxime nulla excepturi, reiciendis consectetur. Quia.</Col>
-        <Col> Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt autem velit recusandae consequatur voluptatibus et deleniti provident, ullam quod facere esse, consequuntur neque eum dolor eos commodi, tenetur aspernatur dolorem reprehenderit! Dignissimos a accusantium iste facilis exercitationem, quidem nam praesentium fuga nesciunt culpa laborum et nostrum id! Perspiciatis illo at aperiam placeat possimus rerum aspernatur dolore laborum? Ab itaque optio facilis harum ad quas dicta autem voluptas illum sit nobis necessitatibus debitis quidem rem reiciendis, blanditiis, dolore beatae! Perferendis magnam, voluptatum porro nulla similique, debitis hic consequatur libero quis rem possimus! Ab dolor rem facere non beatae ratione ex ut.</Col>
-      </Row>
+    return (
+        // fluid sets the Jumbotron to take up entire width of parent 
+        <Container fluid id="top-level-container" className="fluid-container">
+            <Container fluid className="fluid-container">
+                <Jumbotron className="header">
+                    <Container>
+                        <h1 className="header"> Welcome to Adopt-a-Cat :3 </h1>
+                        <p> We hope we can assist you to find the purrfect companion!</p>
+                    </Container>
+                </Jumbotron>
+            </Container>
+            <Container>
+                <Row xs={1} sm={1} md={2} lg={3} xl={4} id="post-rows">
+                    <Col> <div>Number 1 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
+                    <Col> <div>Number 2 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
+                    <Col> <div>Number 3 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
+                    <Col> <div>Number 4 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
+                    <Col> <div>Number 5 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
+                    <Col> <div>Number 6 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
+                    <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
+                    <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
+                    <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
+                    <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
+                    <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
+                    <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
+                    <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
+                    <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
+                    <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
+                    <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
+                    <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
+                    <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
+                    <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
+                    <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
+                </Row>
+            </Container>
 
 
-      <h2>Buttons</h2>
-      <Button/>
-      <h2>Toasts</h2>
-      <Button/>
-    </Container>
-  );
+            <h2>Buttons</h2>
+            <Button />
+            <Button />
+            {/* <footer id="footer">
+                https://medium.com/fredwong-it/react-how-to-add-a-footer-da3abb3d7a41
+                <div id="empty-div"></div>
+                <div id="footer-container">
+                    Footer or maybe paw?
+                </div>
+            </footer> */}
+
+        </Container>
+    );
 };
 
 
