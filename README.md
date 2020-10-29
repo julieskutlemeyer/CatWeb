@@ -20,4 +20,4 @@ Kontaktinformasjonen er tilgjengelig for alle, så vi anbefaler brukeren å ikke
 * [MongoDB Dokumentasjon](https://docs.mongodb.com/manual/)
 * [GrpahQL API for MongoDB](https://docs.mongodb.com/realm/graphql/)
 * [Kattebilder](https://thiscatdoesnotexist.com/) og [kode for bulk-download av kattebilder](https://github.com/theaklair/those-cats-do-not-exist)
-* 
+* [Setup server](https://dev.to/loujaybee/using-create-react-app-with-express)
