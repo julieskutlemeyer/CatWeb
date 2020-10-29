@@ -13,6 +13,7 @@ Kontaktinformasjonen er tilgjengelig for alle, så vi anbefaler brukeren å ikke
 * Brukergenerert data
 
 ### Implementasjon
+* PM2 for å kjøre express-serveren som daemon på IT2810
 
 ### Kilder:
 * https://www.howtographql.com/graphql-js/0-introduction/
