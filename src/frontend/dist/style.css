@@ -26,3 +26,8 @@ body {
 .fluid-container {
   padding: 0;
 }
+
+#pagination {
+  justify-content: center;
+  margin-top: 1.5em;
+}

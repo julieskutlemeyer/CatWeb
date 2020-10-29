@@ -9,7 +9,7 @@ function Header()  {
             <Jumbotron className="header">
                 <Container>
                     <h1 className="header"> Welcome to Adopt-a-Cat :3 </h1>
-                    <p> We hope we can assist you to find the purrfect companion!</p>
+                    <p> Let us help you find the purrfect furbaby!</p>
                 </Container>
             </Jumbotron>
         </Container>
