@@ -4,7 +4,6 @@ import Pagination from 'react-bootstrap/Pagination'
 function Paging() {
     return (
         // TODO: This is not implemented yet
-
             <Pagination>
                 <Pagination.First />
                 <Pagination.Prev />
