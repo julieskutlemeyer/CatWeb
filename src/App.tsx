@@ -11,16 +11,22 @@ const axios = require('axios').default;
 function App() {
   const [data, setData] = useState("")
   const [dat, setDat] = useState(0)
-  const [sortby, setSortby] = useState("owner.first_name")
+  const [sortby, setSortby] = useState("-owner.phone")
   const [page, setPage] = useState("1")
   const [search, setSearch] = useState("")
   const [gender, setGender] = useState("")
 
-  var query = "?sortby="+{sortby}+"&page="+{page}+"&name="+{search}+"&gender="+{gender}
+  const params = {
+    sortby: sortby,
+    page: page,
+    name: search,
+    gender: gender
+  }
 
-  axios.get('http://it2810-10.idi.ntnu.no:5000/api/cat'+query).then((res: any) => {
-    console.log(res);
-    setData(res.data[dat].cat.cat_name)
+  
+
+  axios.get('http://it2810-10.idi.ntnu.no:5000/api/cat', {params}).then((res: any) => {
+    console.log(res.data.posts);
   })
 
   return (
