@@ -475,3 +475,4 @@ MigrationBackup/
 
 # Removes all cat pircures from tracking
 src/database/cat_pictures/
+src/frontend/dist/
