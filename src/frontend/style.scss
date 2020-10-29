@@ -28,6 +28,38 @@ body {
     background-color: $lighten-2;
 }
 
+#row-search {
+
+}
+
+.btn-primary{
+    background-color: $accent-1;
+    border-style: none;
+}
+
+#search-col {
+    // justify-content: right;
+    // justify-self: right;
+    // justify-items: right;
+}
+
+#sort-col {
+    justify-content: center;
+    justify-items: center;
+}
+
+#search-filter-sort {
+    justify-content: space-around;
+    * {
+        justify-content: center;
+        justify-self: center;
+        justify-items: center;
+        align-content: center;
+        align-self: center;
+        align-items: center;
+    }
+
+}
 
 
 // Some fixing to get gaps between cols and rows

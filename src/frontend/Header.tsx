@@ -13,7 +13,7 @@ function Header()  {
                 </Container>
             </Jumbotron>
         </Container>
-    )
-}
+    );
+};
 
 export default Header;
