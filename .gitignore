@@ -470,3 +470,8 @@ MigrationBackup/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,visualstudio,vim
 
+# Removes vscode files
+.vscode
+
+# Removes all cat pircures from tracking
+src/database/cat_pictures/
