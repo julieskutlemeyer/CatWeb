@@ -4,6 +4,8 @@
 // bandwidth when cloning this repo. These were generated using this repo: https://github.com/theaklair/those-cats-do-not-exist
 // The code will probably still work but will only generate one entry.
 
+import { randomBytes } from "crypto";
+
 // To check out the result install and run: ts-node create_dummy_data.ts
 const fs = require('fs');
 let faker = require('faker');
@@ -13,14 +15,14 @@ faker.locale = 'nb_NO'
 function generateData(csv_data:string) {
     let entry = []
     let gend:boolean;
-
+    let races = ["Ragdoll", "Persian", "British Horthår", "Norsk Skogkatt", "Sphynx", "Siameser", "Burmeser", "Maine Coon", "Balineser", "Russisk Blå", "Himalayakatt", "Munckin", "Blandingsrase"]
 
     let cats_folder = fs.readdirSync('src/database/cat_pictures');
     let end = (cats_folder.length)
     // Ensures 50/50 split on genders of cats, and chooses how many entries to be made.
     // Currently limited to 100 as this is the amount of images currently created.
-    for (let id = 0; id <= end-1; id++) {
-        if (id > 5) {
+    for (let i = 0; i <= end-1; i++) {
+        if (i > (end / 2) ) {
             gend = false;
         } else {
             gend = true;
@@ -43,6 +45,8 @@ function generateData(csv_data:string) {
         let county_name = location[4];
         let county_code = location[3];
         let street_name = location[1];
+
+        let no_likes = Math.floor(Math.random() * 100)
 
         // Fake info of the owner:
         let owner_fn = faker.name.firstName();
@@ -69,16 +73,16 @@ function generateData(csv_data:string) {
         let utc_date_born = (Date.UTC(year2, month2, day2));
         // console.log("utc_date_born: " + utc_date_born);
 
-        let image_adress = "http://folk.ntnu.no/aleksamk/cats/"+cats_folder[id];
+        let image_adress = "http://folk.ntnu.no/aleksamk/cats/"+cats_folder[i];
 
         // TODO: Maybe add description of the cat
         entry.push({
-            "id": id,
             "post": {
                 "date_published": utc_date_published, // integer UTC-date-time
                 "county_code": county_code, // string of county code, eg 3050
                 "county_name": county_name, // string of county name
-                "street_name": street_name  // string of adress (no number as we want the data to be real, but not too spesific)
+                "street_name": street_name, // string of adress (no number as we want the data to be real, but not too spesific)
+                "likes": no_likes
             },
             "owner": {
                 "first_name": owner_fn, 
@@ -90,7 +94,8 @@ function generateData(csv_data:string) {
                 "cat_name": cat_name,
                 "cat_gender": cat_gend, // string, female or male
                 "cat_birthdate": utc_date_born, // int
-                "cat_img_rel_adr": image_adress // string of an actual hosted image
+                "cat_img_rel_adr": image_adress,// string of an actual hosted image
+                "cat_race": races[Math.floor(Math.random() * 13)]
             }
         });
     }
