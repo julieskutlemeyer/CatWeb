@@ -4,7 +4,7 @@ const Cat = require('../models/cat');
 
 router.get('/cat', async(req, res, next) => {
 
-    const { page = 1, limit = 10, sortby = "owner.first_name", name = "", gender="" } = req.query;
+    const { page = 1, limit = 12, sortby = "owner.first_name", name = "", gender="" } = req.query;
     console.log(req.query);
     console.log(sortby);
     search_name = new RegExp(name, 'i');
@@ -20,7 +20,7 @@ router.get('/cat', async(req, res, next) => {
             .exec();
 
         // get total documents in the Posts collection 
-        const count = await Cat.countDocuments();
+        const count = await Cat.countDocuments({"cat.cat_gender": catgender});
 
         // return response with posts, total pages, and current page
         res.json({
@@ -38,11 +38,18 @@ router.get('/cat', async(req, res, next) => {
 });
 
 router.post('/cat', (req, res, next) => {
-    if (req.body.name) {
-        Cat.create(req.body)
-            .then(data => res.json(data))
-            .catch(next)
-    } else {
+    console.log(req.body)
+    if (req.body.id) {
+        Cat.findByIdAndUpdate(req.body.id,{"post.likes": req.body.likes}, function(err, result){
+
+        if(err){
+            res.send(err)
+        }
+        else{
+            res.send(result)
+        }})}
+	    
+	else {
         res.json({
             error: "The input field is empty"
         })
