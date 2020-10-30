@@ -16,7 +16,7 @@ function PostsParams() {
 export const fetchPosts = createAsyncThunk(
     'cats/fetchCats',
     async (params: any) => {
-        const response = await axios.get('http://it2810-10.idi.ntnu.no:5000/api/cat', params)
+        const response = await axios.get('http://it2810-10.idi.ntnu.no:3000/api/cat', params)
         return response.data.posts
     }
 )
