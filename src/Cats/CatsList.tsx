@@ -55,8 +55,7 @@ export default function CatsList() {
         if (postStatus === 'idle') {
             dispatch(fetchPosts({ params }))
         }
-    }, [postStatus, dispatch])
-
+    },[postStatus, dispatch])
 
     function catAge(input: string) {
         let date = new Date();
@@ -65,16 +64,6 @@ export default function CatsList() {
         let thenUTC = then.getUTCDate();
         return Math.floor(now - thenUTC);
     }
-
-
-
-    useEffect(() => {
-        if (postStatus === 'idle') {
-            dispatch(fetchPosts({ params }))
-        }
-    }, [postStatus, dispatch])
-
-
     const renderedCats = CatsPost.map((post: Posts) => (
         <Col key={post._id}>
             <div className="post-div" style={{ backgroundColor: post.cat.cat_gender === "male" ? "#009688" : "#cfa084" }}>
@@ -85,16 +74,16 @@ export default function CatsList() {
                 <img className="cat-img" alt="Catto.png" style={{ width: '100%' }} src={post.cat.cat_img_rel_adr} />
                 <div className="info-post">
                     <div className="info">
-                        <p className="owner"> Eier: </p>  <p> {post.owner.first_name} {post.owner.last_name}</p>
+                        <p className="owner"> Owner: </p>  <p> {post.owner.first_name} {post.owner.last_name}</p>
                     </div>
                     <div className="info">
-                        <p className="county-name"> Kommune: </p> <p>{capitalize(post.post.county_name)} </p>
+                        <p className="county-name"> County: </p> <p>{capitalize(post.post.county_name)} </p>
                     </div>
                     <div className="info">
-                        <p className="cat-race"> Rase: </p> <p> {post.cat.cat_race} </p>
+                        <p className="cat-race"> Race: </p> <p> {post.cat.cat_race} </p>
                     </div>
                     <div className="info">
-                        <p className="cat-gender"> Kjønn: </p> <p> {post.cat.cat_gender === "male" ? "Hann" : "Hunn"} </p>
+                        <p className="cat-gender"> Gender: </p> <p> {post.cat.cat_gender === "male" ? "Hann" : "Hunn"} </p>
                     </div>
                     <div className="info2">
                         <svg id="favoriteStarIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" onClick={() => { dispatch(putLike({ id: post._id, likes: post.post.likes + 1 })) }}>
