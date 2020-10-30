@@ -44,11 +44,6 @@ body {
     border-color: none;
 }
 
-// #search-col {
-//     // justify-content: right;
-//     // justify-self: right;
-//     // justify-items: right;
-// }
 #sort-col {
     justify-content: center;
     justify-items: center;
@@ -97,8 +92,7 @@ body {
     }
 }
 
-// Removes the deafult padding of <Containers> to let e.g. <Jumbotron>
-// the full witdh of the page
+// Removes the deafult padding of <Containers> to let e.g. <Jumbotron> the full witdh of the page
 .fluid-container {
     padding: 0;
 }
@@ -137,6 +131,22 @@ body {
     justify-content: space-between;
 }
 
+#likes {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    font-size: 10pt;
+}
+
+#view-details {
+    font-size: 12pt;
+    font-weight: bold;
+    color: white;
+    text-decoration: underline ;
+}
+
 #apply-btn {
     margin-left: 1em;
 }
@@ -153,4 +163,12 @@ body {
 
 #favoriteStarIcon:active {
     transform: scale(1.2);
+}
+
+/////////////////////////////////
+// Styling for Single Cat Page //
+/////////////////////////////////
+
+#single-cat {
+    background-color: $lighten-1;
 }

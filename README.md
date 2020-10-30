@@ -35,6 +35,10 @@ Orginalt ønsket vi å bruke GRAND-stack med GraphQL, React, Apollo og Neo4j Dat
 De fleste UI-komponenter kommer fra [React Bootstrap](https://react-bootstrap.github.io/). Noen komponenter er også hentet fra [Semantic UI](https://react.semantic-ui.com/) der Bootstrap ikke holdt mål. Ved å bruke bootstrap som rammeverk for designet sørger det for et konsekvent og reaktivt design. Faker er benyttet da dette lar oss lett generere modifisert dummy-data raskt og enkelt. Noe custom styling har blitt brukt, hovedsaklig for å forsørge at vi følger en fargepalett. For custom styling har vi benyttet [sass/scss](https://sass-lang.com/) da dette gjør det smertefrit å bruke variabler og velge de elementene vi ønsker å style. I stede for en konvensjonell liste-view har vi gått for en card-view løsning, med argumentet at det i bunn og grunn har akuratt den samme funksjonen som en liste med en fast rekkefølge.
 
 ## Testing
+https://www.cypress.io/
+npm install cypress --save-dev
+<!-- $(npm bin)/cypress open -->
+npm run cypress:open
 
 
 ### Kilder:
