@@ -1,7 +1,5 @@
 import React from 'react';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
 import './frontend/style.scss'
 
 
@@ -16,8 +14,43 @@ import SearchBar from './change-results/SearchBar';
 import Filter from './change-results/Filter';
 import Sort from './change-results/Sort';
 
-const App: React.FC = () => {
+// const App: React.FC = () => {
+//     return (
+//         // fluid sets the Jumbotron to take up entire width of parent 
+//         <Container fluid id="top-level-container" className="fluid-container">
+//             <Header />
+//             <Container id="search-filter-sort">
+//                 <Row xs={1} md={3} id="row-search">
+//                     <SearchBar />
+//                     <Sort />
+//                     <Filter />
+//                 </Row>
+//             </Container>
+//             <PostList />
+//             <Paging />
+//         </Container>
+//     );
+// };
+
+
+
+import { CatsList } from './Cats/CatsList'
+import { SingleCatPage } from './Cats/SingleCatsPage'
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect,
+} from 'react-router-dom'
+
+// react.fragment gjør at hvis en komponent har 
+// fler elementer i seg, kan vi vise disse uten at det lages
+// ekstra noder til DOMen
+
+function App() {
     return (
+
         // fluid sets the Jumbotron to take up entire width of parent 
         <Container fluid id="top-level-container" className="fluid-container">
             <Header/>
@@ -31,66 +64,28 @@ const App: React.FC = () => {
             <PostList/>
             <Paging/>
         </Container>
+
+            // <Router>
+
+            //     <div className="PostsList">
+            //         <Switch>
+            //             <Route
+            //                 exact
+            //                 path="/"
+            //                 render={() => (
+            //                     <React.Fragment>
+            //                         <CatsList />
+            //                     </React.Fragment>
+            //                 )}
+            //             />
+            //             <Route exact path="/posts/:postId" component={SingleCatPage} />
+            //             <Redirect to="/" />
+            //         </Switch>
+            //     </div>
+            // </Router>
+
+
     );
-};
-
-
-
-import { CatsList } from './Cats/CatsList'
-import { SingleCatPage } from './Cats/SingleCatsPage'
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom'
-
-//react.fragment gjør at hvis en komponent har 
-//fler elementer i seg, kan vi vise disse uten at det lages
-//ekstra noder til DOMen
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/Apsssp.tsx</code> and save to reload.
-        </p>
-
-
-         <Router> 
-      
-          <div className="PostsList">
-             <Switch>
-              <Route
-                exact
-                path="/"
-                render={() => (
-                    <React.Fragment>
-                     <CatsList />
-                   </React.Fragment> 
-                 )}
-              /> 
-                <Route exact path="/posts/:postId" component={SingleCatPage} />  
-               <Redirect to="/" />
-            </Switch>
-          </div>
-        </Router> 
-        
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
 }
 
 export default App;

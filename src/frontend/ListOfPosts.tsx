@@ -10,7 +10,7 @@ function PostList() {
     return (
         <Container>
             <Row xs={1} sm={1} md={2} lg={3} xl={4} id="post-rows">
-                <Col> <div> N1 </div> </Col>
+                <Col> <div>  </div> </Col>
                 <Col> <div> Number 2 </div></Col>
                 <Col> <div> Number 3 </div></Col>
                 <Col> <div> Number 4 </div></Col>
