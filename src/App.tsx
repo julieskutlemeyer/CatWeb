@@ -1,9 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import SearchPage from "./components/SearchPage";
 
-import { PostsList } from './posts/PostsList'
+
+import { CatsList } from './Cats/CatsList'
+import { SingleCatPage } from './Cats/SingleCatsPage'
 
 import {
   BrowserRouter as Router,
@@ -22,14 +23,29 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Edit <code>src/Apsssp.tsx</code> and save to reload.
         </p>
 
-        <SearchPage />
 
-        <React.Fragment>
-                <PostsList />
-          </React.Fragment>
+         <Router> 
+      
+          <div className="PostsList">
+             <Switch>
+              <Route
+                exact
+                path="/"
+                render={() => (
+                    <React.Fragment>
+                     <CatsList />
+                   </React.Fragment> 
+                 )}
+              /> 
+                <Route exact path="/posts/:postId" component={SingleCatPage} />  
+               <Redirect to="/" />
+            </Switch>
+          </div>
+        </Router> 
+        
 
         <a
           className="App-link"
