@@ -105,7 +105,11 @@ body {
 .post-div {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     > div {
+=======
+    >div {
+>>>>>>> 019f08e9e6e2a59cecfaf2f327bf7d4f7660b4b2
         margin: .5em;
         padding: 0;
     }
@@ -147,7 +151,24 @@ p {
     text-decoration: underline ;
 }
 
+#apply-btn {
+    margin-left: 1em;
+}
 
+#page-text {
+    font-size: 1.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+#favoriteStarIcon {
+    transition: 0.2s;
+}
+
+#favoriteStarIcon:active {
+    transform: scale(1.2);
+    fill: gold;
+}
 
 /////////////////////////////////
 // Styling for Single Cat Page //

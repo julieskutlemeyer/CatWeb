@@ -15,7 +15,7 @@ import {
 
 // Components
 import Header from './frontend/Header';
-//import Paging from './frontend/Pagination'
+import Paging from './frontend/Pagination'
 import SearchBar from './change-results/SearchBar';
 import Filter from './change-results/Filter';
 import Sort from './change-results/Sort';
@@ -24,6 +24,7 @@ import CatsList from './Cats/CatsList';
 
 //import { SingleCatPage } from './Cats/SingleCatsPage'
 import { PageButton } from "./Cats/PageButton"
+import ApplyChange from './change-results/ApplyChange';
 
 // react.fragment gjør at hvis en komponent har 
 // fler elementer i seg, kan vi vise disse uten at det lages
@@ -31,6 +32,7 @@ import { PageButton } from "./Cats/PageButton"
 
 function App() {
     return (
+
         // fluid sets the Jumbotron to take up entire width of parent 
         <Container fluid id="top-level-container" className="fluid-container">
             <Header />
@@ -39,6 +41,10 @@ function App() {
                     <SearchBar />
                     <Sort />
                     <Filter />
+                    
+                </Row>
+                <Row>
+                    <ApplyChange/>
                 </Row>
             </Container>
 
@@ -69,5 +75,31 @@ function App() {
     );
 };
 
+
+//   return (
+
+//          <Router> 
+
+//           <div className="PostsList">
+//              <Switch>
+//               <Route
+//                 exact
+//                 path="/"
+//                 render={() => (
+//                     <React.Fragment>
+//                      <CatsList />
+//                    </React.Fragment> 
+//                  )}
+//               /> 
+//                 {/* <Route exact path="/posts/:postId" component={SingleCatPage} />   */}
+//                <Redirect to="/" />
+//             </Switch>
+//           </div>
+//         </Router> 
+
+//         <PageButton />
+
+//   );
+// }
 
 export default App;
