@@ -34,8 +34,17 @@ Videre lagde vi en "hoved"-interface, Posts, som inneholdt alle parameterne og d
 vider ekunne vi mappe med hver enkelt post med type Posts (fra interface). 
 
 ## Backend
+Backenden var implementert på den virtuelle maskinen til IDI og vi brukte mongoDB for databasen og kjørte serveren i express på port 3000 slik at man 
+kan nå databasen utenfor NTNUs nett. Først lagde vi en database i neo4j med Apollo, men bestemte oss for å heller bruke MERN stacken, da det var mer 
+ressurser ute for bruk av denne. Vi brukte PM2 for å daemonisere index.js filen der express-serveren kjørte, slik at vi slapp å være innlogget i 
+Secure Shellen. 
+
+Dataene genererte vi selv ved å bruke AI-genererte kattebilder og en csv-fil med alle addressene for eierne, samt et skript for å generere kattenavn og 
+parametre for knappen. 
 
 ## Testing
+Vi lagde en snapshot test med JEST
+
 
 ## Design
 
