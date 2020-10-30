@@ -19,6 +19,7 @@ import Header from './frontend/Header';
 import SearchBar from './change-results/SearchBar';
 import Filter from './change-results/Filter';
 import Sort from './change-results/Sort';
+import {SingleCatPage} from "./Cats/SingleCatPage"
 import CatsList from './Cats/CatsList';
 
 //import { SingleCatPage } from './Cats/SingleCatsPage'
@@ -54,7 +55,7 @@ function App() {
                                 </React.Fragment>
                             )}
                         />
-                        {/* <Route exact path="/posts/:postId" component={SingleCatPage} />   */}
+                         <Route exact path="/posts/:catId" component={SingleCatPage} />   
                         <Redirect to="/" />
                     </Switch>
                 </div>

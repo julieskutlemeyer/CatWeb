@@ -58,5 +58,7 @@ export const catsSlice = createSlice({
 
 
 export default catsSlice.reducer
+export const selectPostById = (state: any, catId: string) =>
+    state.cats.cats.find((cat: any) => cat._id === catId)
 
 
