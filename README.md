@@ -38,14 +38,7 @@ Dette var et TypeScript-problem som vi møtte løse ved å lage interfaces for a
 Videre lagde vi en "hoved"-interface, Posts, som inneholdt alle parameterne og deres typer. 
 vider ekunne vi mappe med hver enkelt post med type Posts (fra interface). 
 
-## Backend
-Backenden var implementert på den virtuelle maskinen til IDI og vi brukte mongoDB for databasen og kjørte serveren i express på port 3000 slik at man 
-kan nå databasen utenfor NTNUs nett. Først lagde vi en database i neo4j med Apollo, men bestemte oss for å heller bruke MERN stacken, da det var mer 
-ressurser ute for bruk av denne. Vi brukte PM2 for å daemonisere index.js filen der express-serveren kjørte, slik at vi slapp å være innlogget i 
-Secure Shellen. 
 
-Dataene genererte vi selv ved å bruke AI-genererte kattebilder og en csv-fil med alle addressene for eierne, samt et skript for å generere kattenavn og 
-parametre for knappen. 
 
 ## Database 
 # Datasett:
@@ -56,11 +49,14 @@ MongoDB er satt opp på VM  ......
 
 Orginalt ønsket vi å bruke GRAND-stack med GraphQL, React, Apollo og Neo4j Database. Vi fikk satt opp Neo4j og interagert med den gjennom Cypher, men resten av implementasjonen viste seg å bli unødvendig komplisert. Neo4j er en grafdatabase, og i teorien ville dette i sammarbeid med GraphQL gitt oss raskere CRUD-operasjoner. Hadde vi hatt mer tid til oppgaven ville vi fortsatt med dette. Vi endte derfor opp med en mer tradisjonell web-stack, MERN (MongoDB, Express, React og Node). MERN er en veldig populær web-stack og har god dokumentasjon samt mange eksempler og ressurser.
 
-# REST:
-....
+# REST og EXPRESS
+Backenden var implementert på den virtuelle maskinen til IDI og vi brukte mongoDB for databasen og kjørte serveren i express på port 3000 slik at man 
+kan nå databasen utenfor NTNUs nett. Først lagde vi en database i neo4j med Apollo, men bestemte oss for å heller bruke MERN stacken, da det var mer 
+ressurser ute for bruk av denne. Vi brukte PM2 for å daemonisere index.js filen der express-serveren kjørte, slik at vi slapp å være innlogget i 
+Secure Shellen. 
 
-# Express
-...
+Dataene genererte vi selv ved å bruke AI-genererte kattebilder og en csv-fil med alle addressene for eierne, samt et skript for å generere kattenavn og 
+parametre for knappen. 
 
 
 ## Design
