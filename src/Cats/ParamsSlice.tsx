@@ -23,5 +23,6 @@ export const paramsSlice = createSlice({
 
 export const { pageClicked } = paramsSlice.actions
 //{type: "params/pageClicked"}
+
 export default paramsSlice.reducer
 

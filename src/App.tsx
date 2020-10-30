@@ -50,47 +50,48 @@ import { PageButton } from "./Cats/PageButton"
 // ekstra noder til DOMen
 
 function App() {
-    return (
+    // return (
 
-        // fluid sets the Jumbotron to take up entire width of parent 
-        <Container fluid id="top-level-container" className="fluid-container">
-            <Header/>
-            <Container id="search-filter-sort">
-                <Row xs={1} md={3} id="row-search">
-                    <SearchBar />
-                    <Sort />
-                    <Filter />
-                </Row>
-            </Container>
-            <PostList/>
-            <Paging/>
-        </Container>
+    //     // fluid sets the Jumbotron to take up entire width of parent 
+    //     <Container fluid id="top-level-container" className="fluid-container">
+    //         <Header/>
+    //         <Container id="search-filter-sort">
+    //             <Row xs={1} md={3} id="row-search">
+    //                 <SearchBar />
+    //                 <Sort />
+    //                 <Filter />
+    //             </Row>
+    //         </Container>
+    //         <PostList/>
+    //         <Paging/>
+    //     </Container>
 
-            // <Router>
+    //         // <Router>
 
-            //     <div className="PostsList">
-            //         <Switch>
-            //             <Route
-            //                 exact
-            //                 path="/"
-            //                 render={() => (
-            //                     <React.Fragment>
-            //                         <CatsList />
-            //                     </React.Fragment>
-            //                 )}
-            //             />
-            //             <Route exact path="/posts/:postId" component={SingleCatPage} />
-            //             <Redirect to="/" />
-            //         </Switch>
-            //     </div>
-            // </Router>
+    //         //     <div className="PostsList">
+    //         //         <Switch>
+    //         //             <Route
+    //         //                 exact
+    //         //                 path="/"
+    //         //                 render={() => (
+    //         //                     <React.Fragment>
+    //         //                         <CatsList />
+    //         //                     </React.Fragment>
+    //         //                 )}
+    //         //             />
+    //         //             <Route exact path="/posts/:postId" component={SingleCatPage} />
+    //         //             <Redirect to="/" />
+    //         //         </Switch>
+    //         //     </div>
+    //         // </Router>
 
 
-    );
+   // );
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+       
         <p>
           Edit <code>src/Apsssp.tsx</code> and save to reload.
         </p>
