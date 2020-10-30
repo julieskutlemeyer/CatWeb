@@ -2,7 +2,7 @@
 
 # Prosjekt 3
 
-`npm install
+`npm install &&
 npm start`
 
 ### Find-A-Cat
