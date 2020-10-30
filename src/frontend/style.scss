@@ -50,16 +50,19 @@ body {
 }
 
 #search-filter-sort {
-    // justify-content: space-between;
     flex-wrap: nowrap;
     * {
         align-items: center;
     }
 }
 
+#row-search {
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
 #search-col {
     display: flex;
-    justify-content: flex-start;
 }
 
 #sort-col {
