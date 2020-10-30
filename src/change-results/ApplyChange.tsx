@@ -12,13 +12,15 @@ const ApplyChange = () => {
 
     const disabled = Boolean(params.page < 2)
 
+    const upDisabled = Boolean(Boolean(params.gender != "") && Boolean(params.page > 17) || Boolean(params.page > 34))
+
 
 
     return (
         <Col className="filter-col">
             <Button disabled={disabled} onClick={() => { dispatch(pageClickedDown()); dispatch(fetchPosts({ params })) }}>Prev</Button>
             <p id="page-text">{params.page}</p>
-            <Button onClick={() => { dispatch(pageClicked()); dispatch(fetchPosts({ params })) }}>Next</Button> 
+            <Button disabled={upDisabled} onClick={() => { dispatch(pageClicked()); dispatch(fetchPosts({ params })) }}>Next</Button> 
         </Col>
     );
 };
