@@ -69,13 +69,13 @@ export default function CatsList() {
     function giveLikes(likes: number) {
         const likes_messages = ["Give more stars", "Give me stars", "I want stars", "Mmm stars!"]
         const mod_likes = likes % 20
-        if (mod_likes > 15){
+        if (mod_likes > 15) {
             return likes_messages[0]
         }
-        if (mod_likes > 10){
+        if (mod_likes > 10) {
             return likes_messages[1]
         }
-        if (mod_likes > 5){
+        if (mod_likes > 5) {
             return likes_messages[2]
         }
         return likes_messages[3]

@@ -50,7 +50,8 @@ body {
 }
 
 #search-filter-sort {
-    justify-content: space-around;
+    // justify-content: space-between;
+    flex-wrap: nowrap;
     * {
         align-items: center;
     }
@@ -68,7 +69,12 @@ body {
 
 .filter-col {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    margin: 1em;
+    * {
+        margin: 0;
+        align-content: center;
+    }
 }
 
 // Some fixing to get gaps between cols and rows

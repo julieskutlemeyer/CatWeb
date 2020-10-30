@@ -29,7 +29,7 @@ function postAgeDays(input: string) {
     let now = date.getUTCDate();
     let then = new Date(input);
     let thenUTC = then.getUTCDate();
-    return Math.ceil((now - thenUTC) / (1000 * 60 * 60 * 24));
+    return Math.ceil(now - thenUTC);
 }
 
 function dateBorn(input: string) {
@@ -51,16 +51,16 @@ export const SingleCatPage = ({ match }: RouteComponentProps<Tparams>) => {
         state.cats.cats.find((cat: any) => cat._id === catId)
     )
 
-    // const cat = useSelector(state => selectPostById(state, catId))
-    // const post = useSelector( (state: RootState )  =>
-    //  state.posts.find( (post: any)  => post.id === postId)
-    //)
-
     if (!cat) {
         return (
-            <Container id="error-single-cat">
-                <h1>Cat not found! {">"}:3 </h1>
-            </Container>
+            <>
+                <Container id="error-single-cat">
+                    <h1>Cat not found! {">"}:3 </h1>
+                </Container>
+                <Link to="/" className="back-link">
+                    Back
+            </Link>
+            </>
         )
     }
 
@@ -78,28 +78,14 @@ export const SingleCatPage = ({ match }: RouteComponentProps<Tparams>) => {
                 <Col>
                     <h1>{cat.cat.cat_name}</h1>
                     <p>
-                        {cat.cat.cat_name} is a beautiful {cat.cat.cat_gender} {cat.cat.cat_race.toLowerCase()} cat that has been apart of this world for {catAge(cat.cat.cat_birthdate)} years!
+                        {cat.cat.cat_name} is a beautiful {cat.cat.cat_gender} {cat.cat.cat_race.toLowerCase()} cat that has been a part of this world for {catAge(cat.cat.cat_birthdate)} years!
                         {" "} {cat.cat.cat_gender === "male" ? "His" : "Her"} birthday is on the {dateBorn(cat.cat.cat_birthdate).getDay()}/{dateBorn(cat.cat.cat_birthdate).getMonth()}/{dateBorn(cat.cat.cat_birthdate).getFullYear()}.
-                        His owner is {cat.owner.first_name} {cat.owner.last_name} and is reachable by email: <b>{cat.owner.email}</b> and by phone: <b>{cat.owner.phone}</b>.
+                        {cat.cat.cat_gender === "male" ? "His" : "Her"} owner is {cat.owner.first_name} {cat.owner.last_name} and is reachable by email: <b>{cat.owner.email}</b> and by phone: <b>{cat.owner.phone}</b>.
                         Currently they live in {cat.post.county_code}, {cat.post.county_name} on the street {cat.post.street_name}. {cat.cat.cat_name} would love to be your new companion,
                         he has been waiting for a new home for {postAgeDays(cat.post.date_published)} days.
-
                     </p>
                 </Col>
-
-
-
             </Row>
-
-
-            {/* <div className = "post">
-            <p>{cat.post.first_name}</p>
-            <p>{cat.post.last_name}</p>
-            <p>{cat.post.email}</p>
-            <p>{cat.post.phone}</p>
-        </div> */}
-
-
         </Container>
     )
 }

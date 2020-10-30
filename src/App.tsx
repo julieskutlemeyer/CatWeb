@@ -19,7 +19,7 @@ import Paging from './frontend/Pagination'
 import SearchBar from './change-results/SearchBar';
 import Filter from './change-results/Filter';
 import Sort from './change-results/Sort';
-import {SingleCatPage} from "./Cats/SingleCatPage"
+import { SingleCatPage } from "./Cats/SingleCatPage"
 import CatsList from './Cats/CatsList';
 
 //import { SingleCatPage } from './Cats/SingleCatsPage'
@@ -41,15 +41,10 @@ function App() {
                     <SearchBar />
                     <Sort />
                     <Filter />
-                    
-                </Row>
-                <Row>
-                    <ApplyChange/>
                 </Row>
             </Container>
 
             <Router>
-
                 <div className="PostsList">
                     <Switch>
                         <Route
@@ -61,15 +56,15 @@ function App() {
                                 </React.Fragment>
                             )}
                         />
-                         <Route exact path="/posts/:catId" component={SingleCatPage} />   
+                        <Route exact path="/posts/:catId" component={SingleCatPage} />
                         <Redirect to="/" />
                     </Switch>
                 </div>
             </Router>
-            {/* <CatsList/> */}
-            {/* <Paging /> */}
-            <PageButton />
-            {/* PageButton thingy */}
+
+            <Row>
+                <ApplyChange />
+            </Row>
         </Container>
 
     );
