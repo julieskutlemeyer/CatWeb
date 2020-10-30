@@ -103,11 +103,12 @@ export default function CatsList() {
                         <p className="cat-gender"> Gender: </p> <p> {post.cat.cat_gender === "male" ? "Hann" : "Hunn"} </p>
                     </div>
                     <div className="info2">
-                        <svg id="favoriteStarIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" onClick={() => { dispatch(putLike({ id: post._id, likes: post.post.likes + 1 })) }}>
+                        <svg id="favoriteStarIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="grey" onClick={() => { dispatch(putLike({ id: post._id, likes: post.post.likes + 1 })) }}>
                             <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />
                         </svg>
-                        <div id="likes"><pre>{giveLikes(post.post.likes)} </pre> <p id="likenr">{post.post.likes}</p></div>
+                        <div id="likes"><pre>{giveLikes(post.post.likes)} </pre> 
                     </div>
+                    <p id="likenr">Stars: {post.post.likes}</p></div>
                     <Link id="view-details" to={`/posts/${post._id}`} className="button muted-button">
                         View Details
                     </Link>

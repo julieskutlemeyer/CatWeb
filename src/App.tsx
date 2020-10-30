@@ -53,6 +53,9 @@ function App() {
                                     </Container>
 
                                     <CatsList />
+                                    <Row>
+                <ApplyChange />
+            </Row>
                                 </React.Fragment>
                             )}
                         />
@@ -61,10 +64,6 @@ function App() {
                     </Switch>
                 </div>
             </Router>
-
-            <Row>
-                <ApplyChange />
-            </Row>
         </Container>
 
     );
