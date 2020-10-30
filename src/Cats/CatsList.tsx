@@ -1,6 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux'
 import {fetchPosts} from "./CatsSlice"
 
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
+
 import React, { useEffect } from 'react'
 
 interface Post {
@@ -58,14 +62,18 @@ export const CatsList = () => {
     
     const renderedCats = CatsPost.map( (post: Posts) => (
             // <h3 key= {post._id}>{post.cat.cat_name}</h3>
+            <Col>
                 <img key= {post._id} src={post.cat.cat_img_rel_adr}/>
+                </Col>
           
       ))
     
       return (
         <section>
           <h2>Posts</h2>
+          <Row>
           {renderedCats}
+          </Row>
         </section>
       )
     }

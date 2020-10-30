@@ -1,23 +1,34 @@
 import { createSlice, createAsyncThunk} from '@reduxjs/toolkit'
+import { useSelector } from 'react-redux'
 const axios = require('axios').default;
 
-const params = {
-    sortby: "",
-    page: "1",
-    search: "",
-    gender: ""
-}
+// const params = {
+//     sortby: "",
+//     page: "1",
+//     search: "",
+//     gender: ""
+// }
 
-var query = "?sortby="+params.sortby+"&page="+params.page+"&name="+params.search+"&gender="+params.gender
+function PostsQuery() {
+  const params = {
+    sortby: useSelector( (state:any) => state.params.sortby),
+    page: useSelector( (state:any) => state.params.page).toString(),
+    search: useSelector( (state:any) => state.params.search),
+    gender: useSelector( (state:any) => state.params.gender)
+  }
+  
+  var query = "?sortby="+params.sortby+"&page="+params.page+"&name="+params.search+"&gender="+params.gender
+  return query
+}
 
 
 
 export const fetchPosts = createAsyncThunk('cats/fetchCats', async () => {
-     const response = await axios.get('http://it2810-10.idi.ntnu.no:5000/api/cat'+query )
+     const response = await axios.get('http://it2810-10.idi.ntnu.no:5000/api/cat'+PostsQuery() )
         return response.data.posts})
     
 
-   // return response.data.posts})
+  
   
 
   console.log(fetchPosts)
@@ -58,4 +69,5 @@ export const catsSlice = createSlice({
 
 
 export default catsSlice.reducer
+
 
