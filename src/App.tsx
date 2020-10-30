@@ -1,56 +1,99 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import SearchPage from "./components/SearchPage";
-const axios = require('axios').default;
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'semantic-ui-css/semantic.min.css'
+import './frontend/style.scss'
 
-//react.fragment gjør at hvis en komponent har 
-//fler elementer i seg, kan vi vise disse uten at det lages
-//ekstra noder til DOMen
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect,
+} from 'react-router-dom'
+
+// Components
+import Header from './frontend/Header';
+import Paging from './frontend/Pagination'
+import SearchBar from './change-results/SearchBar';
+import Filter from './change-results/Filter';
+import Sort from './change-results/Sort';
+import CatsList from './Cats/CatsList';
+
+//import { SingleCatPage } from './Cats/SingleCatsPage'
+import { PageButton } from "./Cats/PageButton"
+
+// react.fragment gjør at hvis en komponent har 
+// fler elementer i seg, kan vi vise disse uten at det lages
+// ekstra noder til DOMen
 
 function App() {
-  const [data, setData] = useState("")
-  const [dat, setDat] = useState(0)
-  const [sortby, setSortby] = useState("-owner.phone")
-  const [page, setPage] = useState("1")
-  const [search, setSearch] = useState("")
-  const [gender, setGender] = useState("")
+    return (
 
-  const params = {
-    sortby: sortby,
-    page: page,
-    name: search,
-    gender: gender
-  }
+        // fluid sets the Jumbotron to take up entire width of parent 
+        <Container fluid id="top-level-container" className="fluid-container">
+            <Header />
+            <Container id="search-filter-sort">
+                <Row xs={1} md={3} id="row-search">
+                    <SearchBar />
+                    <Sort />
+                    <Filter />
+                </Row>
+            </Container>
 
-  
+            <Router>
 
-  axios.get('http://it2810-10.idi.ntnu.no:5000/api/cat', {params}).then((res: any) => {
-    console.log(res.data.posts);
-  })
+                <div className="PostsList">
+                    <Switch>
+                        <Route
+                            exact
+                            path="/"
+                            render={() => (
+                                <React.Fragment>
+                                    <CatsList />
+                                </React.Fragment>
+                            )}
+                        />
+                        {/* <Route exact path="/posts/:postId" component={SingleCatPage} />   */}
+                        <Redirect to="/" />
+                    </Switch>
+                </div>
+            </Router>
+            {/* <CatsList/> */}
+            {/* <Paging /> */}
+            <PageButton />
+            {/* PageButton thingy */}
+        </Container>
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p onClick={() => setDat(dat+1)}>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        {data}
+    );
+};
 
-        <SearchPage />
 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+//   return (
+
+//          <Router> 
+
+//           <div className="PostsList">
+//              <Switch>
+//               <Route
+//                 exact
+//                 path="/"
+//                 render={() => (
+//                     <React.Fragment>
+//                      <CatsList />
+//                    </React.Fragment> 
+//                  )}
+//               /> 
+//                 {/* <Route exact path="/posts/:postId" component={SingleCatPage} />   */}
+//                <Redirect to="/" />
+//             </Switch>
+//           </div>
+//         </Router> 
+
+//         <PageButton />
+
+//   );
+// }
 
 export default App;
