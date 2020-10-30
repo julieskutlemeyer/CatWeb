@@ -40,7 +40,7 @@ function Filter() {
                 </ButtonToggle>
 
             ))}
-            <Button id="apply-btn" onClick={()=>dispatch(fetchPosts({params}))}>Apply</Button>
+            <Button id="apply-btn" onClick={()=>dispatch(fetchPosts({params}))}>Apply Filter</Button>
         </Col>
 
     );

@@ -1,5 +1,4 @@
 import React from 'react';
-// Semantic UI used here
 import { Search } from 'semantic-ui-react'
 import Col from 'react-bootstrap/Col';
 import { useDispatch, useSelector } from 'react-redux';

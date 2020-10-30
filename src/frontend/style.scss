@@ -137,14 +137,14 @@ body {
 }
 
 p {
-    font-size: 10pt;
+    font-size: 15pt;
 }
 
 #view-details {
     font-size: 12pt;
     font-weight: bold;
     color: white;
-    text-decoration: underline ;
+    text-decoration: underline;
 }
 
 #apply-btn {
@@ -170,6 +170,24 @@ p {
 // Styling for Single Cat Page //
 /////////////////////////////////
 
+#error-single-cat {
+    height:100%;
+    margin: auto;
+    text-align: center;
+    * {
+        font-size: 40pt;
+    }
+}
+
 #single-cat {
-    background-color: $lighten-1;
+    // color: $lighten-1;
+    justify-content: center;
+}
+
+.back-link{
+    font-size: 40pt;
+    font-weight: bold;
+    color: black;
+    // text-decoration: underline;
+    margin-bottom: 100px;
 }

@@ -37,6 +37,15 @@ interface Posts {
     cat: Cat
 }
 
+export function catAge(input: string) {
+    let date = new Date();
+    let now = date.getUTCDate();
+    let then = new Date(input);
+    let thenUTC = then.getUTCDate();
+    return Math.floor(now - thenUTC);
+}
+
+
 export default function CatsList() {
     const dispatch = useDispatch()
 
@@ -55,15 +64,8 @@ export default function CatsList() {
         if (postStatus === 'idle') {
             dispatch(fetchPosts({ params }))
         }
-    },[postStatus, dispatch])
+    }, [postStatus, dispatch])
 
-    function catAge(input: string) {
-        let date = new Date();
-        let now = date.getUTCDate();
-        let then = new Date(input);
-        let thenUTC = then.getUTCDate();
-        return Math.floor(now - thenUTC);
-    }
     const renderedCats = CatsPost.map((post: Posts) => (
         <Col key={post._id}>
             <div className="post-div" style={{ backgroundColor: post.cat.cat_gender === "male" ? "#009688" : "#cfa084" }}>
