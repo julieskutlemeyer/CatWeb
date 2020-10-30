@@ -2,8 +2,8 @@
 
 # Prosjekt 3
 
-`git clone https://gitlab.stud.idi.ntnu.no/it2810-h20/team-10/prosjektoppgave-3.git`
-`npm install &&
+`$ git clone https://gitlab.stud.idi.ntnu.no/it2810-h20/team-10/prosjektoppgave-3.git`
+`$ npm install &&
 npm start`
 
 ### Find-A-Cat
