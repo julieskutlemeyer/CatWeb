@@ -15,7 +15,7 @@ import {
 
 // Components
 import Header from './frontend/Header';
-import Paging from './frontend/Pagination'
+//import Paging from './frontend/Pagination'
 import SearchBar from './change-results/SearchBar';
 import Filter from './change-results/Filter';
 import Sort from './change-results/Sort';

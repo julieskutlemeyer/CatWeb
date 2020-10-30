@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchPosts } from "./CatsSlice"
+import { fetchPosts, putLike } from "./CatsSlice"
 import React, { useEffect } from 'react'
 
 import Container from 'react-bootstrap/Container';
@@ -50,21 +50,13 @@ export default function CatsList() {
 
     const params = useSelector((state: any) => state.params)
 
-    const params2 = {
-        page: "2"
-    }
-
-
-
     useEffect(() => {
         if (postStatus === 'idle') {
-            dispatch(fetchPosts({ params2 }))
+            dispatch(fetchPosts({ params }))
         }
-    }, [postStatus, dispatch])
+    }
+        , [postStatus, dispatch])
 
-    console.log("hello")
-    console.log(CatsPost[0])
-    console.log("hello")
 
     function catAge(input: string) {
         let date = new Date();
@@ -78,19 +70,19 @@ export default function CatsList() {
 
     useEffect(() => {
         if (postStatus === 'idle') {
-            dispatch(fetchPosts({ params2 }))
+            dispatch(fetchPosts({ params }))
         }
     }, [postStatus, dispatch])
 
 
     const renderedCats = CatsPost.map((post: Posts) => (
         <Col key={post._id}>
-            <div className="post-div" style={{backgroundColor: post.cat.cat_gender === "male" ? "#009688":"#cfa084" }}>
+            <div className="post-div" style={{ backgroundColor: post.cat.cat_gender === "male" ? "#009688" : "#cfa084" }}>
                 <div className="top-bar-post">
                     <h3 className="cat-name"> {post.cat.cat_name}</h3>
                     <h3 className="cat-age"> {catAge(post.cat.cat_birthdate)}</h3>
                 </div>
-                <img className="cat-img" style={{ width: '100%' }} src={post.cat.cat_img_rel_adr} />
+                <img className="cat-img" alt="Catto.png" style={{ width: '100%' }} src={post.cat.cat_img_rel_adr} />
                 <div className="info-post">
                     <div className="info">
                         <p className="owner"> Eier: </p>  <p> {post.owner.first_name} {post.owner.last_name}</p>
@@ -102,7 +94,13 @@ export default function CatsList() {
                         <p className="cat-race"> Rase: </p> <p> {post.cat.cat_race} </p>
                     </div>
                     <div className="info">
-                        <p className="cat-gender"> Kjønn: </p> <p> {post.cat.cat_gender==="male" ? "Hann":"Hunn"} </p>
+                        <p className="cat-gender"> Kjønn: </p> <p> {post.cat.cat_gender === "male" ? "Hann" : "Hunn"} </p>
+                    </div>
+                    <div className="info2">
+                        <svg id="favoriteStarIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" onClick={() => { dispatch(putLike({ id: post._id, likes: post.post.likes + 1 })) }}>
+                            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />
+                        </svg>
+                        <p>Likes: {post.post.likes}</p>
                     </div>
                 </div>
 
