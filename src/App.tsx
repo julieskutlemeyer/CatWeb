@@ -10,7 +10,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import Header from './frontend/Header';
-import Posts from './frontend/ListOfPosts';
+import PostList from './frontend/ListOfPosts';
 import Paging from './frontend/Pagination'
 import SearchBar from './change-results/SearchBar';
 import Filter from './change-results/Filter';
@@ -28,7 +28,7 @@ const App: React.FC = () => {
                     <Filter />
                 </Row>
             </Container>
-            <Posts/>
+            <PostList/>
             <Paging/>
         </Container>
     );

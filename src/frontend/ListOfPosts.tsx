@@ -6,39 +6,25 @@ import Col from 'react-bootstrap/Col';
 // TODO: remove this import when actual data is implemented
 // import testcat from 'src/database/cat_pictures/1602674119317.jpg'
 
-function Posts() {
+function PostList() {
     return (
         <Container>
             <Row xs={1} sm={1} md={2} lg={3} xl={4} id="post-rows">
-                <Col> <div>Number 1 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
-                <Col> <div>Number 2 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
-                <Col> <div>Number 3 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
-                <Col> <div>Number 4 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
-                <Col> <div>Number 5 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
-                <Col> <div>Number 6 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
-                <Col> <div>Number 7 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
-                <Col> <div>Number 8 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
-                <Col> <div>Number 9 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
-                <Col> <div>Number 10 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
-                <Col> <div>Number 11 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
-                <Col> <div>Number 12 ---  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit atque commodi corrupti perferendis illum sint consequatur explicabo natus delectus perspiciatis aspernatur nesciunt, minima tempore accusamus, deleniti nisi ipsa soluta!</div></Col>
-                {/* <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
-                <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
-                <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
-                <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
-                <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
-                <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
-                <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
-                <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
-                <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
-                <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
-                <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
-                <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
-                <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col>
-                <Col> <div><h3>Cat numbero 7</h3>  <img src={testcat} alt="test-cat" height="200" width="200" ></img> </div> </Col> */}
+                <Col> <div> N1 </div> </Col>
+                <Col> <div> Number 2 </div></Col>
+                <Col> <div> Number 3 </div></Col>
+                <Col> <div> Number 4 </div></Col>
+                <Col> <div> Number 5 </div></Col>
+                <Col> <div> Number 6 </div></Col>
+                <Col> <div> Number 7 </div></Col>
+                <Col> <div> Number 8 </div></Col>
+                <Col> <div> Number 9 </div></Col>
+                <Col> <div> Number 10 </div></Col>
+                <Col> <div> Number 11 </div></Col>
+                <Col> <div> Number 12 </div></Col>
             </Row>
         </Container>
     );
 };
 
-export default Posts;
+export default PostList;
