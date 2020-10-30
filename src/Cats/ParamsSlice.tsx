@@ -14,6 +14,9 @@ export const paramsSlice = createSlice({
         pageClicked: (state: any) => {
             state.page += 1;
         },
+        pageClickedDown: (state: any) => {
+            state.page -= 1;
+        },
         searchClicked: (state: any, action: any) => {
             state.search = action.payload
         },
@@ -29,7 +32,7 @@ export const paramsSlice = createSlice({
 
 
 
-export const { pageClicked, searchClicked, filterClicked, sortClicked} = paramsSlice.actions
+export const { pageClicked, searchClicked, filterClicked, sortClicked, pageClickedDown} = paramsSlice.actions
 //{type: "params/pageClicked"}
 
 export default paramsSlice.reducer

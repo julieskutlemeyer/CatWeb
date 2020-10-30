@@ -4,6 +4,7 @@ const axios = require('axios').default;
 export const fetchPosts = createAsyncThunk(
     'cats/fetchCats',
     async (params: any) => {
+        console.log(params)
         const response = await axios.get('http://it2810-10.idi.ntnu.no:3000/api/cat', params)
         return response.data.posts
     }
@@ -12,7 +13,6 @@ export const fetchPosts = createAsyncThunk(
 export const putLike = createAsyncThunk(
     'cats/putLike',
     async (likesAndId: any) => {
-        console.log(likesAndId)
         await axios.post('http://it2810-10.idi.ntnu.no:3000/api/cat', likesAndId )
         return likesAndId
     }
@@ -46,9 +46,7 @@ export const catsSlice = createSlice({
         [putLike.fulfilled.toString()]: (state: any, action: any) => {
             const {id} = action.payload
             const upvotedPost:any = state.cats.find((post: any) => post._id === id)
-            console.log("This is likes", upvotedPost.post.likes)
             if (upvotedPost){
-                console.log(upvotedPost)
                 upvotedPost.post.likes++;
             }
         }
