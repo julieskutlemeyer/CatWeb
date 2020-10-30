@@ -44,62 +44,21 @@ export default function CatsList() {
         return str.charAt(0).toUpperCase() + str.substring(1).toLowerCase()
     }
 
-    const postStatus = useSelector( (state:any) => state.cats.status)
-    
-    const CatsPost = useSelector( (state: any) => state.cats.cats)
-    
+    const postStatus = useSelector((state: any) => state.cats.status)
+
+    const CatsPost = useSelector((state: any) => state.cats.cats)
+
     const params = useSelector((state: any) => state.params)
 
     const params2 = {
         page: "2"
-    }
-    
-    
-
-     useEffect(() => {
-       if (postStatus === 'idle') {
-         dispatch(fetchPosts({params2}))
-       }
-     }
-     , [postStatus, dispatch])
-
-     console.log("hello")
-     console.log(CatsPost[0])
-     console.log("hello")
-     
-    
-    // const renderedCats = CatsPost.map( (post: Posts) => (
-    //         // <h3 key= {post._id}>{post.cat.cat_name}</h3>
-    //         <Col>
-    //             <img width="100%" key= {post._id} src={post.cat.cat_img_rel_adr}/>
-    //             </Col>
-          
-    //   ))
-    
-    //   return (
-    //     <section>
-    //       <h2>Posts</h2>
-    //       <Row>
-    //       {renderedCats}
-    //       </Row>
-    //     </section>
-    //   )
-    // }
-
-    function catAge(input: string) {
-        let date = new Date();
-        let now = date.getUTCDate();
-        let then = new Date(input);
-        let thenUTC = then.getUTCDate();
-
-        return Math.floor(now - thenUTC);
     }
 
 
 
     useEffect(() => {
         if (postStatus === 'idle') {
-            dispatch(fetchPosts({params2}))
+            dispatch(fetchPosts({ params2 }))
         }
     }, [postStatus, dispatch])
 
@@ -107,19 +66,45 @@ export default function CatsList() {
     console.log(CatsPost[0])
     console.log("hello")
 
+    function catAge(input: string) {
+        let date = new Date();
+        let now = date.getUTCDate();
+        let then = new Date(input);
+        let thenUTC = then.getUTCDate();
+        return Math.floor(now - thenUTC);
+    }
+
+
+
+    useEffect(() => {
+        if (postStatus === 'idle') {
+            dispatch(fetchPosts({ params2 }))
+        }
+    }, [postStatus, dispatch])
+
 
     const renderedCats = CatsPost.map((post: Posts) => (
         <Col key={post._id}>
-            <div className="post-div">
+            <div className="post-div" style={{backgroundColor: post.cat.cat_gender === "male" ? "#009688":"#cfa084" }}>
                 <div className="top-bar-post">
                     <h3 className="cat-name"> {post.cat.cat_name}</h3>
                     <h3 className="cat-age"> {catAge(post.cat.cat_birthdate)}</h3>
                 </div>
                 <img className="cat-img" style={{ width: '100%' }} src={post.cat.cat_img_rel_adr} />
-                <p className="owner"> Eier: {post.owner.first_name} {post.owner.last_name}</p>
-                <p className="county-name"> Kommune: {capitalize(post.post.county_name)} </p>
-                <p className="cat-race"> Rase: {post.cat.cat_race} </p>
-
+                <div className="info-post">
+                    <div className="info">
+                        <p className="owner"> Eier: </p>  <p> {post.owner.first_name} {post.owner.last_name}</p>
+                    </div>
+                    <div className="info">
+                        <p className="county-name"> Kommune: </p> <p>{capitalize(post.post.county_name)} </p>
+                    </div>
+                    <div className="info">
+                        <p className="cat-race"> Rase: </p> <p> {post.cat.cat_race} </p>
+                    </div>
+                    <div className="info">
+                        <p className="cat-gender"> Kjønn: </p> <p> {post.cat.cat_gender==="male" ? "Hann":"Hunn"} </p>
+                    </div>
+                </div>
 
             </div>
         </Col>

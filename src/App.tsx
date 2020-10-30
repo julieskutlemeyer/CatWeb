@@ -30,7 +30,6 @@ import { PageButton } from "./Cats/PageButton"
 
 function App() {
     return (
-
         // fluid sets the Jumbotron to take up entire width of parent 
         <Container fluid id="top-level-container" className="fluid-container">
             <Header />
@@ -69,31 +68,5 @@ function App() {
     );
 };
 
-
-//   return (
-
-//          <Router> 
-
-//           <div className="PostsList">
-//              <Switch>
-//               <Route
-//                 exact
-//                 path="/"
-//                 render={() => (
-//                     <React.Fragment>
-//                      <CatsList />
-//                    </React.Fragment> 
-//                  )}
-//               /> 
-//                 {/* <Route exact path="/posts/:postId" component={SingleCatPage} />   */}
-//                <Redirect to="/" />
-//             </Switch>
-//           </div>
-//         </Router> 
-
-//         <PageButton />
-
-//   );
-// }
 
 export default App;
