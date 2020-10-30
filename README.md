@@ -21,6 +21,14 @@ Datasettet er opprettet i en automatisert prosess ved hjelp av [Faker](https://w
 # MongoDB:
 MongoDB er satt opp på VM  ......
 
+Orginalt ønsket vi å bruke GRAND-stack med GraphQL, React, Apollo og Neo4j Database. Vi fikk satt opp Neo4j og interagert med den gjennom Cypher, men resten av implementasjonen viste seg å bli unødvendig komplisert. Neo4j er en grafdatabase, og i teorien ville dette i sammarbeid med GraphQL gitt oss raskere CRUD-operasjoner. Hadde vi hatt mer tid til oppgaven ville vi fortsatt med dette. Vi endte derfor opp med en mer tradisjonell web-stack, MERN (MongoDB, Express, React og Node). MERN er en veldig populær web-stack og har god dokumentasjon samt mange eksempler og ressurser.
+
+# REST:
+....
+
+# Express
+...
+
 
 ## Design
 De fleste UI-komponenter kommer fra [React Bootstrap](https://react-bootstrap.github.io/). Noen komponenter er også hentet fra [Semantic UI](https://react.semantic-ui.com/) der Bootstrap ikke holdt mål. Ved å bruke bootstrap som rammeverk for designet sørger det for et konsekvent og reaktivt design. Faker er benyttet da dette lar oss lett generere modifisert dummy-data raskt og enkelt. Noe custom styling har blitt brukt, hovedsaklig for å forsørge at vi følger en fargepalett. For custom styling har vi benyttet [sass/scss](https://sass-lang.com/) da dette gjør det smertefrit å bruke variabler og velge de elementene vi ønsker å style. I stede for en konvensjonell liste-view har vi gått for en card-view løsning, med argumentet at det i bunn og grunn har akuratt den samme funksjonen som en liste med en fast rekkefølge.
