@@ -57,6 +57,21 @@ export default function CatsList() {
         }
     }, [postStatus, dispatch])
 
+    function giveLikes(likes: number) {
+        const likes_messages = ["Give more stars", "Give me stars", "I want stars", "Mmm stars!"]
+        const mod_likes = likes % 20
+        if (mod_likes > 15){
+            return likes_messages[0]
+        }
+        if (mod_likes > 10){
+            return likes_messages[1]
+        }
+        if (mod_likes > 5){
+            return likes_messages[2]
+        }
+        return likes_messages[3]
+    }
+
     function catAge(input: string) {
         let date = new Date();
         let now = date.getUTCDate();
@@ -89,7 +104,7 @@ export default function CatsList() {
                         <svg id="favoriteStarIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" onClick={() => { dispatch(putLike({ id: post._id, likes: post.post.likes + 1 })) }}>
                             <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />
                         </svg>
-                        <div id="likes"><pre>Likes: </pre> <p id="likenr">{post.post.likes}</p></div>
+                        <div id="likes"><pre>{giveLikes(post.post.likes)} </pre> <p id="likenr">{post.post.likes}</p></div>
                     </div>
                     <Link id="view-details" to={`/posts/${post._id}`} className="button muted-button">
                         View Details

@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 
 function Sort() {
 
-    const types = ["Owners name A-Å", "Likes inc", "Likes desc"]
+    const types = ["Owners name A-Å", "Likes ↑", "Likes ↓"]
 
     const dispatch = useDispatch()
     const params = useSelector((state: any) => state.params)
