@@ -39,15 +39,52 @@ interface Posts {
 export default function CatsList() {
     const dispatch = useDispatch()
 
-    const postStatus = useSelector((state: any) => state.cats.status)
-
-    const CatsPost = useSelector((state: any) => state.cats.cats)
-
-
     // https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
     function capitalize(str: string) {
         return str.charAt(0).toUpperCase() + str.substring(1).toLowerCase()
     }
+
+    const postStatus = useSelector( (state:any) => state.cats.status)
+    
+    const CatsPost = useSelector( (state: any) => state.cats.cats)
+    
+    const params = useSelector((state: any) => state.params)
+
+    const params2 = {
+        page: "2"
+    }
+    
+    
+
+     useEffect(() => {
+       if (postStatus === 'idle') {
+         dispatch(fetchPosts({params2}))
+       }
+     }
+     , [postStatus, dispatch])
+
+     console.log("hello")
+     console.log(CatsPost[0])
+     console.log("hello")
+     
+    
+    // const renderedCats = CatsPost.map( (post: Posts) => (
+    //         // <h3 key= {post._id}>{post.cat.cat_name}</h3>
+    //         <Col>
+    //             <img width="100%" key= {post._id} src={post.cat.cat_img_rel_adr}/>
+    //             </Col>
+          
+    //   ))
+    
+    //   return (
+    //     <section>
+    //       <h2>Posts</h2>
+    //       <Row>
+    //       {renderedCats}
+    //       </Row>
+    //     </section>
+    //   )
+    // }
 
     function catAge(input: string) {
         let date = new Date();
@@ -62,7 +99,7 @@ export default function CatsList() {
 
     useEffect(() => {
         if (postStatus === 'idle') {
-            dispatch(fetchPosts())
+            dispatch(fetchPosts({params2}))
         }
     }, [postStatus, dispatch])
 
@@ -72,8 +109,8 @@ export default function CatsList() {
 
 
     const renderedCats = CatsPost.map((post: Posts) => (
-        <Col>
-            <div className="post-div" key={post._id}>
+        <Col key={post._id}>
+            <div className="post-div">
                 <div className="top-bar-post">
                     <h3 className="cat-name"> {post.cat.cat_name}</h3>
                     <h3 className="cat-age"> {catAge(post.cat.cat_birthdate)}</h3>
