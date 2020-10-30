@@ -55,7 +55,7 @@ export default function CatsList() {
         if (postStatus === 'idle') {
             dispatch(fetchPosts({ params }))
         }
-    },[postStatus, dispatch])
+    }, [postStatus, dispatch])
 
     function catAge(input: string) {
         let date = new Date();
