@@ -1,0 +1,201 @@
+// Color palette: 
+$lighten-5: #e0f2f1;
+$lighten-4: #b2dfdb;
+$lighten-3: #80cbc4;
+$lighten-2: #4db6ac;
+$lighten-1: #26a69a;
+$main: #009688;
+$darken-1: #00897b;
+$darken-2: #00796b;
+$darken-3: #00695c;
+$darken-4: #004d40;
+$accent-1: #a7ffeb;
+$accent-2: #64ffda;
+$accent-3: #1de9b6;
+$accent-4: #00bfa5;
+.App {
+    text-align: center;
+}
+
+// Background color
+body {
+    background-color: $lighten-4;
+}
+
+.header {
+    background-color: $lighten-2;
+}
+
+.btn-primary {
+    background-color: $accent-1;
+    border-style: none;
+    color: black;
+}
+
+.btn-primary:hover {
+    background-color: $darken-1;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: $darken-4;
+    border-color: none;
+}
+
+#sort-col {
+    justify-content: center;
+    justify-items: center;
+}
+
+#search-filter-sort {
+    flex-wrap: nowrap;
+    * {
+        align-items: center;
+    }
+}
+
+#row-search {
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+#search-col {
+    display: flex;
+}
+
+#sort-col {
+    display: flex;
+    justify-content: center;
+}
+
+.filter-col {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+    * {
+        margin: 0;
+        align-content: center;
+    }
+}
+
+// Some fixing to get gaps between cols and rows
+#post-rows {
+    >* {
+        >div {
+            background-color: $lighten-5;
+            padding: 1em;
+            margin: .5em;
+            text-align: center;
+            border-radius: .5em;
+        }
+    }
+}
+
+// Some fixing to get gaps between cols and rows
+#post-rows {
+    * {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+// Removes the deafult padding of <Containers> to let e.g. <Jumbotron> the full witdh of the page
+.fluid-container {
+    padding: 0;
+}
+
+#pagination {
+    justify-content: center;
+    margin-top: 1.5em;
+}
+
+.post-div {
+    display: flex;
+    flex-direction: column;
+    >div {
+        margin: .5em;
+        padding: 0;
+    }
+}
+
+.top-bar-post {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cat-img {
+    border-radius: .5em;
+}
+
+.info-post {
+    width: 90%;
+    align-self: center;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+#likes {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    font-size: 15pt;
+}
+
+#view-details {
+    font-size: 12pt;
+    font-weight: bold;
+    color: white;
+    text-decoration: underline;
+}
+
+#apply-btn {
+    margin-left: 1em;
+}
+
+#page-text {
+    font-size: 1.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+#favoriteStarIcon {
+    transition: 0.2s;
+}
+
+#favoriteStarIcon:active {
+    transform: scale(1.2);
+}
+
+/////////////////////////////////
+// Styling for Single Cat Page //
+/////////////////////////////////
+
+#error-single-cat {
+    height:100%;
+    margin: auto;
+    text-align: center;
+    * {
+        font-size: 40pt;
+    }
+}
+
+#single-cat {
+    // color: $lighten-1;
+    justify-content: center;
+}
+
+.back-link{
+    font-size: 40pt;
+    font-weight: bold;
+    color: black;
+    // text-decoration: underline;
+    margin-bottom: 100px;
+}

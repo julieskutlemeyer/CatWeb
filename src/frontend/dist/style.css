@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background-color: #b2dfdb;
+}
+
+.header {
+  background-color: #4db6ac;
+}
+
+#post-rows * div {
+  background-color: #e0f2f1;
+  padding: 1em;
+  margin: 0.5em;
+  text-align: center;
+  border-radius: 0.5em;
+}
+
+#post-rows * {
+  padding: 0;
+  margin: 0;
+}
+
+.fluid-container {
+  padding: 0;
+}
+
+#pagination {
+  justify-content: center;
+  margin-top: 1.5em;
+}

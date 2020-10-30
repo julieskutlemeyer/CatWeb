@@ -42,17 +42,37 @@ Secure Shellen.
 Dataene genererte vi selv ved å bruke AI-genererte kattebilder og en csv-fil med alle addressene for eierne, samt et skript for å generere kattenavn og 
 parametre for knappen. 
 
-## Testing
-Vi lagde en snapshot test med JEST
+## Database 
+# Datasett:
+Datasettet er opprettet i en automatisert prosess ved hjelp av [Faker](https://www.npmjs.com/package/faker), [kartdata](https://kartkatalog.geonorge.no/metadata/matrikkelen-adresse/f7df7a18-b30f-4745-bd64-d0863812350c) og [kattebilder](https://thiscatdoesnotexist.com/). All dataen blir generert av create_dummy_data.ts kjørt en gang som resulterer i filen data.json som ble satt inn i MongoDB manuelt. Kartdataen ble brukt for å generere realistiske adresser som er konsekvente, da faker hadde en tendens til å lage adresser med feil, eks Land: Belgia, By: New York, Gate: Merkurveien. Faker gir også ukonsekvente resultater med navn og kjønn, forsøkt å bruke xfaker til å fikse dette uten hell, kjønnene er derfor ikke konsekvente med navnene. Kattebildene er generert ved hjelp av [those-cats-do-not-exist](https://github.com/theaklair/those-cats-do-not-exist) som lagrer de AI-genererte kattebildene i en mappe.
+
+# MongoDB:
+MongoDB er satt opp på VM  ......
+
+Orginalt ønsket vi å bruke GRAND-stack med GraphQL, React, Apollo og Neo4j Database. Vi fikk satt opp Neo4j og interagert med den gjennom Cypher, men resten av implementasjonen viste seg å bli unødvendig komplisert. Neo4j er en grafdatabase, og i teorien ville dette i sammarbeid med GraphQL gitt oss raskere CRUD-operasjoner. Hadde vi hatt mer tid til oppgaven ville vi fortsatt med dette. Vi endte derfor opp med en mer tradisjonell web-stack, MERN (MongoDB, Express, React og Node). MERN er en veldig populær web-stack og har god dokumentasjon samt mange eksempler og ressurser.
+
+# REST:
+....
+
+# Express
+...
 
 
 ## Design
+De fleste UI-komponenter kommer fra [React Bootstrap](https://react-bootstrap.github.io/). Noen komponenter er også hentet fra [Semantic UI](https://react.semantic-ui.com/) der Bootstrap ikke holdt mål. Ved å bruke bootstrap som rammeverk for designet sørger det for et konsekvent og reaktivt design. Faker er benyttet da dette lar oss lett generere modifisert dummy-data raskt og enkelt. Noe custom styling har blitt brukt, hovedsaklig for å forsørge at vi følger en fargepalett. For custom styling har vi benyttet [sass/scss](https://sass-lang.com/) da dette gjør det smertefrit å bruke variabler og velge de elementene vi ønsker å style. I stede for en konvensjonell liste-view har vi gått for en card-view løsning, med argumentet at det i bunn og grunn har akuratt den samme funksjonen som en liste med en fast rekkefølge.
 
-## Eksterne biblioteker
+## Testing
+For End-2-end testing ble det forsøkt å bruke [Cypress](https://www.cypress.io/). Dette resulterte i en veldig liten og litt uferdig test men grunnet dårlig prioritering av tid rakk dette ikke fullføres.
+Det eksisterer også en snapshot test i JEST men denne funker desverre ikke av samme grunn.
+
+For å kjøre testen:
+npm install cypress --save-dev
+npm run cypress:open
 
 ### Kilder:
-* https://www.howtographql.com/graphql-js/0-introduction/
+* [GraphQL](https://www.howtographql.com/graphql-js/0-introduction/)
 * [MongoDB Dokumentasjon](https://docs.mongodb.com/manual/)
 * [GrpahQL API for MongoDB](https://docs.mongodb.com/realm/graphql/)
 * [Kattebilder](https://thiscatdoesnotexist.com/) og [kode for bulk-download av kattebilder](https://github.com/theaklair/those-cats-do-not-exist)
 * [Redux Dokumentasjon + tutoritals](https://redux.js.org/)
+* [Setup server](https://dev.to/loujaybee/using-create-react-app-with-express)
