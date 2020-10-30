@@ -1,41 +1,10 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'semantic-ui-css/semantic.min.css'
 import './frontend/style.scss'
-
-
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-
-import Header from './frontend/Header';
-import PostList from './frontend/ListOfPosts';
-import Paging from './frontend/Pagination'
-import SearchBar from './change-results/SearchBar';
-import Filter from './change-results/Filter';
-import Sort from './change-results/Sort';
-
-// const App: React.FC = () => {
-//     return (
-//         // fluid sets the Jumbotron to take up entire width of parent 
-//         <Container fluid id="top-level-container" className="fluid-container">
-//             <Header />
-//             <Container id="search-filter-sort">
-//                 <Row xs={1} md={3} id="row-search">
-//                     <SearchBar />
-//                     <Sort />
-//                     <Filter />
-//                 </Row>
-//             </Container>
-//             <PostList />
-//             <Paging />
-//         </Container>
-//     );
-// };
-
-
-
-import { CatsList } from './Cats/CatsList'
-import { SingleCatPage } from './Cats/SingleCatsPage'
 
 import {
     BrowserRouter as Router,
@@ -43,6 +12,20 @@ import {
     Route,
     Redirect,
 } from 'react-router-dom'
+
+// Components
+import Header from './frontend/Header';
+import PostList from './frontend/ListOfPosts';
+import Paging from './frontend/Pagination'
+import SearchBar from './change-results/SearchBar';
+import Filter from './change-results/Filter';
+import Sort from './change-results/Sort';
+import CatsList from './Cats/CatsList';
+
+
+// import CatsList from './Cats/CatsList'
+// import SingleCatPage from './Cats/SingleCatsPage'
+
 
 // react.fragment gjør at hvis en komponent har 
 // fler elementer i seg, kan vi vise disse uten at det lages
@@ -61,7 +44,7 @@ function App() {
                     <Filter />
                 </Row>
             </Container>
-            <PostList/>
+            <CatsList/>
             <Paging/>
         </Container>
 

@@ -5,10 +5,6 @@ import Col from 'react-bootstrap/Col';
 
 function SearchBar() {
 
-
-
-
-
     return (
         // https://react.semantic-ui.com/modules/search/#types-standard
         <Col id="search-col">

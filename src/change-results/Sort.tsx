@@ -6,8 +6,6 @@ function Sort() {
 
 
 
-
-
     return (
         <Col id="sort-col">
             <p> Sort here </p>
