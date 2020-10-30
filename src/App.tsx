@@ -19,7 +19,7 @@ import Paging from './frontend/Pagination'
 import SearchBar from './change-results/SearchBar';
 import Filter from './change-results/Filter';
 import Sort from './change-results/Sort';
-import {SingleCatPage} from "./Cats/SingleCatPage"
+import { SingleCatPage } from "./Cats/SingleCatPage"
 import CatsList from './Cats/CatsList';
 
 //import { SingleCatPage } from './Cats/SingleCatsPage'
@@ -32,24 +32,10 @@ import ApplyChange from './change-results/ApplyChange';
 
 function App() {
     return (
-
         // fluid sets the Jumbotron to take up entire width of parent 
         <Container fluid id="top-level-container" className="fluid-container">
-            <Header />
-            <Container id="search-filter-sort">
-                <Row xs={1} md={3} id="row-search">
-                    <SearchBar />
-                    <Sort />
-                    <Filter />
-                    
-                </Row>
-                <Row>
-                    <ApplyChange/>
-                </Row>
-            </Container>
-
             <Router>
-
+                <Header />
                 <div className="PostsList">
                     <Switch>
                         <Route
@@ -57,11 +43,23 @@ function App() {
                             path="/"
                             render={() => (
                                 <React.Fragment>
+                                    <Container id="search-filter-sort">
+                                        <Row xs={1} md={3} id="row-search">
+                                            <SearchBar />
+                                            <Sort />
+                                            <Filter />
+
+                                        </Row>
+                                        <Row>
+                                            <ApplyChange />
+                                        </Row>
+                                    </Container>
+
                                     <CatsList />
                                 </React.Fragment>
                             )}
                         />
-                         <Route exact path="/posts/:catId" component={SingleCatPage} />   
+                        <Route exact path="/posts/:catId" component={SingleCatPage} />
                         <Redirect to="/" />
                     </Switch>
                 </div>
