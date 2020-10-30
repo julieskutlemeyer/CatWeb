@@ -44,13 +44,17 @@ export const CatsList = () => {
     
     const CatsPost = useSelector( (state: any) => state.cats.cats)
     
-    
+    const params = useSelector((state: any) => state.params)
+
+    const params2 = {
+        page: "2"
+    }
     
     
 
      useEffect(() => {
        if (postStatus === 'idle') {
-         dispatch(fetchPosts())
+         dispatch(fetchPosts({params2}))
        }
      }
      , [postStatus, dispatch])
@@ -63,7 +67,7 @@ export const CatsList = () => {
     const renderedCats = CatsPost.map( (post: Posts) => (
             // <h3 key= {post._id}>{post.cat.cat_name}</h3>
             <Col>
-                <img key= {post._id} src={post.cat.cat_img_rel_adr}/>
+                <img width="100%" key= {post._id} src={post.cat.cat_img_rel_adr}/>
                 </Col>
           
       ))
