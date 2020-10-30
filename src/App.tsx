@@ -1,42 +1,10 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'semantic-ui-css/semantic.min.css'
 import './frontend/style.scss'
-
-
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-
-import Header from './frontend/Header';
-import PostList from './frontend/ListOfPosts';
-import Paging from './frontend/Pagination'
-import SearchBar from './change-results/SearchBar';
-import Filter from './change-results/Filter';
-import Sort from './change-results/Sort';
-import {SingleCatPage} from "./Cats/SingleCatPage"
-
-// const App: React.FC = () => {
-//     return (
-//         // fluid sets the Jumbotron to take up entire width of parent 
-//         <Container fluid id="top-level-container" className="fluid-container">
-//             <Header />
-//             <Container id="search-filter-sort">
-//                 <Row xs={1} md={3} id="row-search">
-//                     <SearchBar />
-//                     <Sort />
-//                     <Filter />
-//                 </Row>
-//             </Container>
-//             <PostList />
-//             <Paging />
-//         </Container>
-//     );
-// };
-
-
-
-import { CatsList } from './Cats/CatsList'
-//import { SingleCatPage } from './Cats/SingleCatsPage'
 
 import {
     BrowserRouter as Router,
@@ -44,6 +12,17 @@ import {
     Route,
     Redirect,
 } from 'react-router-dom'
+
+// Components
+import Header from './frontend/Header';
+import Paging from './frontend/Pagination'
+import SearchBar from './change-results/SearchBar';
+import Filter from './change-results/Filter';
+import Sort from './change-results/Sort';
+import {SingleCatPage} from "./Cats/SingleCatPage"
+import CatsList from './Cats/CatsList';
+
+//import { SingleCatPage } from './Cats/SingleCatsPage'
 import { PageButton } from "./Cats/PageButton"
 
 // react.fragment gjør at hvis en komponent har 
@@ -51,78 +30,71 @@ import { PageButton } from "./Cats/PageButton"
 // ekstra noder til DOMen
 
 function App() {
-    // return (
+    return (
 
-    //     // fluid sets the Jumbotron to take up entire width of parent 
-    //     <Container fluid id="top-level-container" className="fluid-container">
-    //         <Header/>
-    //         <Container id="search-filter-sort">
-    //             <Row xs={1} md={3} id="row-search">
-    //                 <SearchBar />
-    //                 <Sort />
-    //                 <Filter />
-    //             </Row>
-    //         </Container>
-    //         <PostList/>
-    //         <Paging/>
-    //     </Container>
+        // fluid sets the Jumbotron to take up entire width of parent 
+        <Container fluid id="top-level-container" className="fluid-container">
+            <Header />
+            <Container id="search-filter-sort">
+                <Row xs={1} md={3} id="row-search">
+                    <SearchBar />
+                    <Sort />
+                    <Filter />
+                </Row>
+            </Container>
 
-    //         // <Router>
+            <Router>
 
-    //         //     <div className="PostsList">
-    //         //         <Switch>
-    //         //             <Route
-    //         //                 exact
-    //         //                 path="/"
-    //         //                 render={() => (
-    //         //                     <React.Fragment>
-    //         //                         <CatsList />
-    //         //                     </React.Fragment>
-    //         //                 )}
-    //         //             />
-    //         //             <Route exact path="/posts/:postId" component={SingleCatPage} />
-    //         //             <Redirect to="/" />
-    //         //         </Switch>
-    //         //     </div>
-    //         // </Router>
+                <div className="PostsList">
+                    <Switch>
+                        <Route
+                            exact
+                            path="/"
+                            render={() => (
+                                <React.Fragment>
+                                    <CatsList />
+                                </React.Fragment>
+                            )}
+                        />
+                         <Route exact path="/posts/:catId" component={SingleCatPage} />   
+                        <Redirect to="/" />
+                    </Switch>
+                </div>
+            </Router>
+            {/* <CatsList/> */}
+            {/* <Paging /> */}
+            <PageButton />
+            {/* PageButton thingy */}
+        </Container>
+
+    );
+};
 
 
-   // );
+//   return (
 
-  return (
-    <div className="App">
-      <header className="App-header">
-         <Router> 
-      
-          <div className="PostsList">
-             <Switch>
-              <Route exact path="/"
-                render={() => (
-                    <React.Fragment>
-                     <CatsList />
-                   </React.Fragment> 
-                 )}
-              /> 
-                 <Route exact path="/posts/:catId" component={SingleCatPage} />   
-               <Redirect to="/" />
-            </Switch>
-          </div>
-        </Router> 
+//          <Router> 
 
-        <PageButton />
-        
+//           <div className="PostsList">
+//              <Switch>
+//               <Route
+//                 exact
+//                 path="/"
+//                 render={() => (
+//                     <React.Fragment>
+//                      <CatsList />
+//                    </React.Fragment> 
+//                  )}
+//               /> 
+//                 {/* <Route exact path="/posts/:postId" component={SingleCatPage} />   */}
+//                <Redirect to="/" />
+//             </Switch>
+//           </div>
+//         </Router> 
 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+//         <PageButton />
+
+//   );
+// }
 
 export default App;
