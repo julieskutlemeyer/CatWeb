@@ -3,9 +3,8 @@ import {fetchPosts} from "./CatsSlice"
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
-
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 interface Post {
         date_published: string,
@@ -37,6 +36,8 @@ interface Posts{
     cat:Cat
     }
 
+
+
 export const CatsList = () => {
     const dispatch = useDispatch()
 
@@ -63,11 +64,15 @@ export const CatsList = () => {
      console.log(CatsPost[0])
      console.log("hello")
      
+     //link to: hva skirive i pathen når det trykkes på knappen
     
     const renderedCats = CatsPost.map( (post: Posts) => (
             // <h3 key= {post._id}>{post.cat.cat_name}</h3>
-            <Col>
-                <img width="100%" key= {post._id} src={post.cat.cat_img_rel_adr}/>
+            <Col key= {post._id} >
+                <img width="100%" src={post.cat.cat_img_rel_adr}/>
+                <Link to={`/posts/${post._id}`} className="button muted-button"> 
+            View Cat
+        </Link>
                 </Col>
           
       ))

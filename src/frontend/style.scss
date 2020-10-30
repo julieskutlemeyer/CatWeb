@@ -13,8 +13,6 @@ $accent-1: #a7ffeb;
 $accent-2: #64ffda;
 $accent-3: #1de9b6;
 $accent-4: #00bfa5;
-
-
 .App {
     text-align: center;
 }
@@ -28,16 +26,14 @@ body {
     background-color: $lighten-2;
 }
 
-#row-search {
+#row-search {}
 
-}
-
-.btn-primary{
+.btn-primary {
     background-color: $accent-1;
     border-style: none;
 }
 
-#search-col {
+#search-col {
     // justify-content: right;
     // justify-self: right;
     // justify-items: right;
@@ -58,9 +54,7 @@ body {
         align-self: center;
         align-items: center;
     }
-
 }
-
 
 // Some fixing to get gaps between cols and rows
 #post-rows {

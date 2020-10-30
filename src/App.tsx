@@ -13,6 +13,7 @@ import Paging from './frontend/Pagination'
 import SearchBar from './change-results/SearchBar';
 import Filter from './change-results/Filter';
 import Sort from './change-results/Sort';
+import {SingleCatPage} from "./Cats/SingleCatPage"
 
 // const App: React.FC = () => {
 //     return (
@@ -91,26 +92,18 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-       
-        <p>
-          Edit <code>src/Apsssp.tsx</code> and save to reload.
-        </p>
-
-
          <Router> 
       
           <div className="PostsList">
              <Switch>
-              <Route
-                exact
-                path="/"
+              <Route exact path="/"
                 render={() => (
                     <React.Fragment>
                      <CatsList />
                    </React.Fragment> 
                  )}
               /> 
-                {/* <Route exact path="/posts/:postId" component={SingleCatPage} />   */}
+                 <Route exact path="/posts/:catId" component={SingleCatPage} />   
                <Redirect to="/" />
             </Switch>
           </div>
