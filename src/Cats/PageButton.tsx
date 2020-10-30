@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { pageClicked, searchClicked, filterClicked, sortClicked } from './ParamsSlice'
 import { fetchPosts } from './CatsSlice'
@@ -6,8 +6,6 @@ import { fetchPosts } from './CatsSlice'
 export function PageButton() {
     const dispatch = useDispatch()
     const params = useSelector((state: any) => state.params)
-
-    const [filter, setFilter] = useState("begge")
 
     return (
         <div>

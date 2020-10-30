@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { fetchPosts } from './CatsSlice'
 
 const initialState = {
     sortby: "",

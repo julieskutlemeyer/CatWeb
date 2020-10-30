@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchPosts } from "./CatsSlice"
+import { fetchPosts, putLike } from "./CatsSlice"
 import React, { useEffect } from 'react'
 
 import Container from 'react-bootstrap/Container';
@@ -47,51 +47,22 @@ export default function CatsList() {
     const postStatus = useSelector( (state:any) => state.cats.status)
     
     const CatsPost = useSelector( (state: any) => state.cats.cats)
-    
-    const params = useSelector((state: any) => state.params)
 
-    const params2 = {
-        page: "2"
-    }
-    
-    
+    const params = useSelector((state: any) => state.params)
 
      useEffect(() => {
        if (postStatus === 'idle') {
-         dispatch(fetchPosts({params2}))
+         dispatch(fetchPosts({params}))
        }
      }
      , [postStatus, dispatch])
 
-     console.log("hello")
-     console.log(CatsPost[0])
-     console.log("hello")
-     
-    
-    // const renderedCats = CatsPost.map( (post: Posts) => (
-    //         // <h3 key= {post._id}>{post.cat.cat_name}</h3>
-    //         <Col>
-    //             <img width="100%" key= {post._id} src={post.cat.cat_img_rel_adr}/>
-    //             </Col>
-          
-    //   ))
-    
-    //   return (
-    //     <section>
-    //       <h2>Posts</h2>
-    //       <Row>
-    //       {renderedCats}
-    //       </Row>
-    //     </section>
-    //   )
-    // }
 
     function catAge(input: string) {
         let date = new Date();
         let now = date.getUTCDate();
         let then = new Date(input);
         let thenUTC = then.getUTCDate();
-
         return Math.floor(now - thenUTC);
     }
 
@@ -99,13 +70,9 @@ export default function CatsList() {
 
     useEffect(() => {
         if (postStatus === 'idle') {
-            dispatch(fetchPosts({params2}))
+            dispatch(fetchPosts({params}))
         }
     }, [postStatus, dispatch])
-
-    console.log("hello")
-    console.log(CatsPost[0])
-    console.log("hello")
 
 
     const renderedCats = CatsPost.map((post: Posts) => (
@@ -115,12 +82,14 @@ export default function CatsList() {
                     <h3 className="cat-name"> {post.cat.cat_name}</h3>
                     <h3 className="cat-age"> {catAge(post.cat.cat_birthdate)}</h3>
                 </div>
-                <img className="cat-img" style={{ width: '100%' }} src={post.cat.cat_img_rel_adr} />
+                <img alt="cat" className="cat-img" style={{ width: '100%' }} src={post.cat.cat_img_rel_adr} />
                 <p className="owner"> Eier: {post.owner.first_name} {post.owner.last_name}</p>
                 <p className="county-name"> Kommune: {capitalize(post.post.county_name)} </p>
                 <p className="cat-race"> Rase: {post.cat.cat_race} </p>
-
-
+                <svg id="favoriteStarIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" onClick={() => {dispatch(putLike({id: post._id, likes: post.post.likes+1}))}}>
+                    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+                </svg>
+                <p>Likes: {post.post.likes}</p>
             </div>
         </Col>
 
