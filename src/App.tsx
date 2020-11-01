@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'semantic-ui-css/semantic.min.css'
 import './frontend/style.scss'
@@ -32,12 +32,12 @@ import ApplyChange from './change-results/ApplyChange';
 // ekstra noder til DOMen
 
 function App() {
-    
+
     const params = useSelector((state: any) => state.params)
     const dispatch = useDispatch()
-    
+
     useEffect(() => {
-        dispatch(fetchPosts({params}))
+        dispatch(fetchPosts({ params }))
     })
     return (
         // fluid sets the Jumbotron to take up entire width of parent 
@@ -61,6 +61,9 @@ function App() {
                                     </Container>
 
                                     <CatsList />
+                                    <Row>
+                                        <ApplyChange />
+                                    </Row>
                                 </React.Fragment>
                             )}
                         />
@@ -70,9 +73,7 @@ function App() {
                 </div>
             </Router>
 
-            <Row>
-                <ApplyChange />
-            </Row>
+
         </Container>
 
     );

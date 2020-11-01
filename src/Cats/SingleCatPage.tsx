@@ -26,9 +26,9 @@ import {
 
 function postAgeDays(input: string) {
     let date = new Date();
-    let now = date.getUTCDate();
+    let now = date.getMonth();
     let then = new Date(input);
-    let thenUTC = then.getUTCDate();
+    let thenUTC = then.getMonth();
     return Math.ceil(now - thenUTC);
 }
 
@@ -82,7 +82,7 @@ export const SingleCatPage = ({ match }: RouteComponentProps<Tparams>) => {
                         {" "} {cat.cat.cat_gender === "male" ? "His" : "Her"} birthday is on the {dateBorn(cat.cat.cat_birthdate).getDay()}/{dateBorn(cat.cat.cat_birthdate).getMonth()}/{dateBorn(cat.cat.cat_birthdate).getFullYear()}.
                         {cat.cat.cat_gender === "male" ? "His" : "Her"} owner is {cat.owner.first_name} {cat.owner.last_name} and is reachable by email: <b>{cat.owner.email}</b> and by phone: <b>{cat.owner.phone}</b>.
                         Currently they live in {cat.post.county_code}, {cat.post.county_name} on the street {cat.post.street_name}. {cat.cat.cat_name} would love to be your new companion,
-                        he has been waiting for a new home for {postAgeDays(cat.post.date_published)} days.
+                        he has been waiting for a new home for {postAgeDays(cat.post.date_published)} months.
                     </p>
                 </Col>
             </Row>
