@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'semantic-ui-css/semantic.min.css'
 import './frontend/style.scss'
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPosts } from './Cats/Catsslice'
+import { fetchPosts } from './Cats/CatsSlice'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
