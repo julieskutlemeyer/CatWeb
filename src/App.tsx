@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'semantic-ui-css/semantic.min.css'
 import './frontend/style.scss'
-
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPosts } from '../Cats/Catsslice'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
@@ -31,6 +32,13 @@ import ApplyChange from './change-results/ApplyChange';
 // ekstra noder til DOMen
 
 function App() {
+    
+    const params = useSelector((state: any) => state.params)
+    const dispatch = useDispatch()
+    
+    useEffect(() => {
+        dispatch(fetchPosts({params}))
+    })
     return (
         // fluid sets the Jumbotron to take up entire width of parent 
         <Container fluid id="top-level-container" className="fluid-container">
