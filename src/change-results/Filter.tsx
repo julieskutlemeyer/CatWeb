@@ -16,12 +16,11 @@ function Filter() {
     // Code from https://react.school/ui/button
     const [active, setActive] = useState(types[0]);
 
-
+    // Sender en dispatch for å kunne filtrere på kattens kjønn
     const filterClick = async (e: any) => {
         var type = e.target.innerHTML
         const filter = type.toLowerCase() === "both" ? "" : type.toLowerCase()
         dispatch(filterClicked(filter))
-        
         setActive(type)
 
     }

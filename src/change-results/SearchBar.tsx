@@ -9,9 +9,9 @@ function SearchBar() {
     const dispatch = useDispatch()
     const params = useSelector((state: any) => state.params)
 
+    // Hver gang søkeresultatet endrer seg så endres parameterne for søkingen
     const onSearchChange = (e: any) => {
         dispatch(searchClicked(e.target.value));
-        dispatch(fetchPosts({ params }))
     }
 
     return (

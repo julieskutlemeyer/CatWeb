@@ -16,7 +16,7 @@ function Sort() {
     // Code from https://react.school/ui/button
     const [active, setActive] = useState(types[0]);
 
-
+    // Gjenbruk av filterClick fra forrige komponent, med endringer for hvilke parametre man skal sortere på.
     const filterClick = async (e: any) => {
         var type = e.target.innerHTML
         var filter;

@@ -6,7 +6,7 @@ import { fetchPosts } from '../Cats/CatsSlice';
 import { pageClicked, pageClickedDown } from '../Cats/ParamsSlice';
 
 const ApplyChange = () => {
-
+    // Komponnent for å velge mellom sidene. 
     const params = useSelector((state: any) => state.params)
     const dispatch = useDispatch()
 
@@ -17,9 +17,9 @@ const ApplyChange = () => {
 
     return (
         <Col className="filter-col">
-            <Button variant="primary" disabled={disabled} onClick={() => { dispatch(pageClickedDown()); dispatch(fetchPosts({ params })) }}>Prev</Button>
+            <Button variant="primary" disabled={disabled} onClick={() => { dispatch(pageClickedDown()) }}>Prev</Button>
             <p id="page-text">{params.page}</p>
-            <Button variant="primary" disabled={upDisabled} onClick={() => { dispatch(pageClicked()); dispatch(fetchPosts({ params })) }}>Next</Button> 
+            <Button variant="primary" disabled={upDisabled} onClick={() => { dispatch(pageClicked()) }}>Next</Button> 
         </Col>
     );
 };
