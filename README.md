@@ -68,6 +68,8 @@ De fleste UI-komponenter kommer fra [React Bootstrap](https://react-bootstrap.gi
 For End-2-end testing ble det forsøkt å bruke [Cypress](https://www.cypress.io/). Dette resulterte i en veldig liten og litt uferdig test men grunnet dårlig prioritering av tid rakk dette ikke fullføres.
 Det eksisterer også en snapshot test i JEST men denne funker desverre ikke av samme grunn.
 
+**NB! OPPDATERING: TESTING ER NÅ LAGT TIL**
+
 For å kjøre testen:
 npm install cypress --save-dev
 npm run cypress:open
