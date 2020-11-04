@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checks that filter-buttong changes states accordingly should render with given state from Redux store 1`] = `
+<div
+  className="filter-col col"
+>
+  <button
+    className="btn active btn-primary"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Both
+  </button>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Male
+  </button>
+  <button
+    className="btn btn-primary"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Female
+  </button>
+</div>
+`;
