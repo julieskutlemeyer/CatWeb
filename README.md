@@ -2,7 +2,8 @@
 
 # Prosjekt 3
 
-`$ git clone https://gitlab.stud.idi.ntnu.no/it2810-h20/team-10/prosjektoppgave-3.git`
+`$ git clone https://gitlab.stud.idi.ntnu.no/it2810-h20/team-10/prosjektoppgave-3.git`  
+`$ cd prosjektoppgave-3`  
 `$ npm install &&
 npm start`
 
