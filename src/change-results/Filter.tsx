@@ -22,7 +22,6 @@ function Filter() {
         const filter = type.toLowerCase() === "both" ? "" : type.toLowerCase()
         dispatch(filterClicked(filter))
         setActive(type)
-
     }
     
 
