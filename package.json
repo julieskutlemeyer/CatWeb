@@ -8,7 +8,6 @@
         "@testing-library/react": "^9.3.2",
         "@testing-library/user-event": "^7.1.2",
         "@types/faker": "^5.1.2",
-        "@types/jest": "^24.0.0",
         "@types/node": "^12.0.0",
         "@types/react": "^16.9.0",
         "@types/react-dom": "^16.9.0",
@@ -28,8 +27,7 @@
         "redux-query-sync": "^0.1.10",
         "redux-thunk": "^2.3.0",
         "semantic-ui-css": "^2.4.1",
-        "semantic-ui-react": "^2.0.1",
-        "typescript": "~3.7.2"
+        "semantic-ui-react": "^2.0.1"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -57,9 +55,17 @@
         "@babel/core": "^7.12.3",
         "@babel/preset-react": "^7.12.1",
         "@babel/preset-typescript": "^7.10.4",
-        "@types/react-test-renderer": "^16.9.3",
         "@testing-library/jest-dom": "^5.11.4",
-        "redux-devtools": "^3.7.0"
+        "@types/jest": "^24.9.1",
+        "@types/react-test-renderer": "^16.9.3",
+        "@types/redux-mock-store": "^1.0.2",
+        "enzyme": "^3.11.0",
+        "enzyme-adapter-react-16": "^1.15.5",
+        "jest": "^24.9.0",
+        "redux-devtools": "^3.7.0",
+        "redux-mock-store": "^1.5.4",
+        "ts-jest": "^26.4.3",
+        "typescript": "^3.7.5"
     },
     "presets": [
         "@babel/preset-react"

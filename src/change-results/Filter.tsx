@@ -21,9 +21,7 @@ function Filter() {
         var type = e.target.innerHTML
         const filter = type.toLowerCase() === "both" ? "" : type.toLowerCase()
         dispatch(filterClicked(filter))
-        
         setActive(type)
-
     }
     
 
